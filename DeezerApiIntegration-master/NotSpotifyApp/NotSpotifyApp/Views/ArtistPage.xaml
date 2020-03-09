@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="NotSpotifyApp.Views.ArtistPage">
+    
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0"
+                           Grid.ColumnSpan="3"
+                           Margin="0,0,0,20"
+                           BackgroundColor ="LightBlue">
+                </Frame>
+
+                <Image Grid.Row="0"
+                           Grid.ColumnSpan="3"
+                           Source="ic_musician"  
+                           HorizontalOptions="End"
+                           Margin="5,0,0,0">
+                </Image>
+
+                <Button Grid.Row="0"
+                        Grid.ColumnSpan="3"
+                        CornerRadius="50"
+                        Text="Search artist"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                        Margin="0,30,0,30">
+                </Button>
+
+                <Entry Placeholder="Enter the artist's Deezer ID here" 
+                           Text="{Binding Artist.Id}" 
+                           Margin="105,0,105,0"
+                           FontSize="15" 
+                           Grid.Row="1" 
+                           Grid.ColumnSpan="3" 
+                           VerticalOptions="Center">
+                </Entry>
+
+                <Button Grid.Row="1"
+                        Grid.ColumnSpan="3" 
+                        Text="Search" 
+                        BorderColor="AliceBlue" 
+                        Margin="10,10,15,10" 
+                        BackgroundColor="CadetBlue" 
+                        FontAttributes="Bold" 
+                        CornerRadius="50" 
+                        Command="{Binding GetArtistInfoCommand}" 
+                        HorizontalOptions="EndAndExpand">
+                </Button>
+
+
+                <Image Source="{Binding ArtistInfo.Picture}" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="{Binding ArtistInfo.Name}" FontAttributes="Bold" FontSize="30" TextColor="BurlyWood"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="StartAndExpand"/>
+
+                <Label Text="Number of fans: " FontSize="18" Grid.Row="4" Grid.Column="0" Margin="20,0,0,0"/>
+                <Label Text="{Binding ArtistInfo.NumberOfFans}" FontAttributes="Bold" FontSize="18" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                <Label Text="Deezer link: " FontSize="18" Grid.Row="5" Grid.Column="0" Margin="20,0,0,0"/>
+                <Label Text="{Binding ArtistInfo.Link}" FontAttributes="Bold" FontSize="18"  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                <Label Text="Sharing link: " FontSize="18" Grid.Row="6" Grid.Column="0" Margin="20,0,0,0"/>
+                <Label Text="{Binding ArtistInfo.Share}" FontAttributes="Bold" FontSize="18"  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                <Label Text="Number of albums: " FontSize="18" Grid.Row="7" Grid.Column="0" Margin="20,0,0,0"/>
+                <Label Text="{Binding ArtistInfo.NumberOfAlbums}" FontAttributes="Bold" FontSize="18"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                <Label Text="Artist radio: " FontSize="18" Grid.Row="8" Grid.Column="0" Margin="20,0,0,0"/>
+                <Label Text="{Binding ArtistInfo.Radio}" FontAttributes="Bold" FontSize="18" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                <Label Text="Sharing link: " FontSize="18" Grid.Row="9" Grid.Column="0" Margin="20,0,0,0"/>
+                <Label Text="{Binding ArtistInfo.Tracklist}" FontAttributes="Bold" FontSize="18" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+            </Grid>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage> 
