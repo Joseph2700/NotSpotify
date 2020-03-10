@@ -26,5 +26,19 @@ namespace NotSpotifyApp.Services
 			}
 			return default;
         }
-    }
+
+		public Task<Track> GetTrackInfo(string Id)
+		{
+			try
+			{
+				HttpClient client = new HttpClient();
+				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+			}
+			catch (Exception ex)
+			{
+
+			}
+		}
+	}
 }

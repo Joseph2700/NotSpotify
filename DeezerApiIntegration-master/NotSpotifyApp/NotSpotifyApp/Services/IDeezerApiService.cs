@@ -6,5 +6,6 @@ namespace NotSpotifyApp.Services
     public interface IDeezerApiService
     {
         Task<Artist> GetArtistInfo(string Id);
+        Task<Track> GetTrackInfo(string Id);
     }
 }
