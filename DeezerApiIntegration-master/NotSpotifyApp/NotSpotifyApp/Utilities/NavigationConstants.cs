@@ -10,5 +10,6 @@ namespace NotSpotifyApp.Utilities
         public const string TabbedPageMenu = "/OptionsTabbedPage?selectedTab=HomePage";
         public const string ArtistPage = "ArtistPage";
         public const string TrackPage = "TrackPage";
+        public const string GenrePage = "GenrePage";
     }
 }

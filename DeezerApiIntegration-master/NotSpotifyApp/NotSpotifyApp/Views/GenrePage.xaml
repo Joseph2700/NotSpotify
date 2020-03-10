@@ -17,21 +17,21 @@
 
                 <Entry Placeholder="ID"
                        HorizontalOptions="FillAndExpand"
-                       Text="{Binding Id}"
+                       Text="{Binding Genre.Id}"
                        TextColor="Black"
                        Margin="5"/>
 
                 <Button Text="Show Genre info"
-                        Command="{Binding GetGenreCommand}"
+                        Command="{Binding GetGenreInfoCommand}"
                         Margin="0,0,0,40"/>
 
                 <Label Text="ID: "
                        Style="{StaticResource InfoLabel}"/>
-                <Label Text="{Binding GetGenre.Id}"/>
+                <Label Text="{Binding GenreInfo.Id}"/>
 
                 <Label Text="Name: "
                        Style="{StaticResource InfoLabel}"/>
-                <Label Text="{Binding GetGenre.Name}"/>
+                <Label Text="{Binding GenreInfo.Name}"/>
             </StackLayout>
         </ScrollView>
         
