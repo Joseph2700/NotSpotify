@@ -10,6 +10,7 @@ namespace NotSpotifyApp.Utilities
         public const string ArtistUrl = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
         public const string AlbumUrl = "";
         public const string TrackUrl = "";
+        public const string GenreUrl = "https://api.deezer.com/genre/";
         public const string ApiHost = "x-rapidapi-host";
         public const string ApiHostValue = "deezerdevs-deezer.p.rapidapi.com";
         public const string ApiKey = "x-rapidapi-key";
