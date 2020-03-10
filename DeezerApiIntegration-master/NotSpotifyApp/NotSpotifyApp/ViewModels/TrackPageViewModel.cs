@@ -1,5 +1,6 @@
 ﻿using NotSpotifyApp.Models;
 using NotSpotifyApp.Services;
+using NotSpotifyApp.Utilities;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -9,6 +10,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace NotSpotifyApp.ViewModels
 {
@@ -43,6 +45,17 @@ namespace NotSpotifyApp.ViewModels
                     Debug.WriteLine($"API EX {ex}");    
                 }
             }
+        }
+
+        public async Task<bool> CheckInternetConnection()
+        {
+            bool IsInternetAvaible = true;
+            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                IsInternetAvaible = false;
+                await App.Current.MainPage.DisplayAlert($"{AlertTextConstants.TitleText}", $"{AlertTextConstants.MessageText}", $"{AlertTextConstants.OptionButtonText}");
+            }
+            return IsInternetAvaible;
         }
     }
 }
