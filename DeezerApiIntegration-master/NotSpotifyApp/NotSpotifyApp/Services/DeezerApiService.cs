@@ -27,18 +27,21 @@ namespace NotSpotifyApp.Services
 			return default;
         }
 
-		public Task<Track> GetTrackInfo(string Id)
+		public async Task<Track> GetTrackInfo(string Id)
 		{
 			try
 			{
 				HttpClient client = new HttpClient();
 				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
 				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await client.GetStringAsync($"{ApiConfig.TrackUrl}{Id}");
+				return JsonConvert.DeserializeObject<Track>(result);
 			}
 			catch (Exception ex)
 			{
-
+				Debug.WriteLine($"API EXCEPTION {ex}");
 			}
+			return default;
 		}
 	}
 }
