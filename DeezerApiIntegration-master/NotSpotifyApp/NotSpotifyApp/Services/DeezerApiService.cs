@@ -43,5 +43,22 @@ namespace NotSpotifyApp.Services
 			}
 			return default;
 		}
+
+		public async Task<Genre> GetGenreInfo(string Id)
+		{
+			try
+			{
+				HttpClient client = new HttpClient();
+				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await client.GetStringAsync($"{ApiConfig.GenreUrl}{Id}");
+				return JsonConvert.DeserializeObject<Genre>(result);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"API EXCEPTION {ex}");
+			}
+			return default;
+		}
 	}
 }
