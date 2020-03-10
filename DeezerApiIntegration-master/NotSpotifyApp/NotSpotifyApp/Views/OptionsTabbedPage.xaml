@@ -5,8 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:NotSpotifyApp.Views"
             mc:Ignorable="d"
-             x:Class="NotSpotifyApp.Views.OptionsTabbedPage">
+             x:Class="NotSpotifyApp.Views.OptionsTabbedPage"
+            NavigationPage.HasNavigationBar="False">
 
     <local:HomePage Title="Home" IconImageSource="ic_home"/>
     <local:ArtistPage Title="Artists" IconImageSource="ic_mic"/>
+    <local:TrackPage Title="Tracks" IconImageSource="ic_track"/>
 </TabbedPage>

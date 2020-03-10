@@ -84,7 +84,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_track.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NotSpotifyApp\NotSpotifyApp.csproj">
       <Project>{E499AD96-544F-448E-A0CF-EE8EEDB7807F}</Project>

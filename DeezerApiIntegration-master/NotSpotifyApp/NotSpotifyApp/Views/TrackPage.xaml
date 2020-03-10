@@ -6,10 +6,8 @@
              mc:Ignorable="d"
              x:Class="NotSpotifyApp.Views.TrackPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
