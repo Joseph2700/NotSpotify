@@ -29,6 +29,8 @@ namespace NotSpotifyApp
             containerRegistry.RegisterForNavigation<OptionsTabbedPage>();
             containerRegistry.RegisterForNavigation<ArtistPage>();
             containerRegistry.RegisterForNavigation<ArtistPage, ArtistPageViewModel>();
+            containerRegistry.RegisterForNavigation<GenrePage>();
+            containerRegistry.RegisterForNavigation<GenrePage, GenrePageViewModel>();
             containerRegistry.Register<IDeezerApiService, DeezerApiService>();
         }
 
