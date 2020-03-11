@@ -9,6 +9,7 @@
     <ContentPage.Content>
 
         <ScrollView>
+
             <StackLayout Margin="30">
                 <Label Text="Insert album ID"
                        HorizontalOptions="Center"
@@ -25,18 +26,22 @@
 
                 <Button Text="Show album info"
                         Command="{Binding GetAlbumInfoCommand}"
-                        Margin="0,0,0,40"/>
+                        BorderColor="AliceBlue" 
+                        BackgroundColor="CadetBlue" 
+                        FontAttributes="Bold" 
+                        CornerRadius="50" 
+                          HorizontalOptions="CenterAndExpand"/>
 
                 <Image Source="{Binding AlbumInfo.CoverXl}"/>
 
-                <Label Text="ID: "/>
+                <Label FontSize="17" Text="ID: "/>
                 <Label Text="{Binding Id}"/>
 
-                <Label Text="Name: "/>
+                <Label FontSize="17" Text="Name: "/>
 
                 <Label Text="{Binding AlbumInfo.Title}"/>
 
-                <Label Text="Release date: "/>
+                <Label FontSize="17" Text="Release date: "/>
                 <Label Text="{Binding AlbumInfo.ReleaseDate}"/>
             </StackLayout>
         </ScrollView>

@@ -24,14 +24,20 @@
                        Margin="5"/>
 
                 <Button Text="Show Genre info"
-                        Command="{Binding GetGenreInfoCommand}"
-                        Margin="0,0,0,40"/>
+                        BorderColor="AliceBlue" 
+                        BackgroundColor="CadetBlue" 
+                        FontAttributes="Bold" 
+                        CornerRadius="50" 
+                        Command="{Binding GetGenreInfoCommand}" 
+                        HorizontalOptions="CenterAndExpand">
+                </Button>
 
-                <Label Text="ID: "
+
+                <Label FontSize="17" Text="ID: "
                        Style="{StaticResource InfoLabel}"/>
                 <Label Text="{Binding Id}"/>
 
-                <Label Text="Name: "
+                <Label FontSize="17" Text="Name: "
                        Style="{StaticResource InfoLabel}"/>
                 <Label Text="{Binding GenreInfo.Name}"/>
             </StackLayout>
