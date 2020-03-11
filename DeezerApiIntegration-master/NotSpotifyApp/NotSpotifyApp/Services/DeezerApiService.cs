@@ -27,15 +27,15 @@ namespace NotSpotifyApp.Services
 			return default;
         }
 
-		public async Task<Track> GetTrackInfo(string Id)
+		public async Task<Album> GetAlbumInfo(string Id)
 		{
 			try
 			{
-				HttpClient trackClient = new HttpClient();
-				trackClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
-				trackClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
-				var result = await trackClient.GetStringAsync($"{ApiConfig.TrackUrl}{Id}");
-				return JsonConvert.DeserializeObject<Track>(result);
+				HttpClient albumClient = new HttpClient();
+				albumClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				albumClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await albumClient.GetStringAsync($"{ApiConfig.AlbumUrl}{Id}");
+				return JsonConvert.DeserializeObject<Album>(result);
 			}
 			catch (Exception ex)
 			{

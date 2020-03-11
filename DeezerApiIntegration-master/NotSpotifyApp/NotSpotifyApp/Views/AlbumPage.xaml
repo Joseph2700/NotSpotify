@@ -4,42 +4,42 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="NotSpotifyApp.Views.TrackPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             x:Class="NotSpotifyApp.Views.AlbumPage">
     <ContentPage.Content>
+
         <ScrollView>
             <StackLayout Margin="30">
-                <Label Text="Insert Track ID"
-                    
+                <Label Text="Insert album ID"
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
                        FontSize="40"
                        TextColor="Black"/>
 
                 <Entry Keyboard="Numeric"
-                       Placeholder="Id"
+                       Placeholder="ID"
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding Id}"
                        TextColor="Black"
                        Margin="5"/>
 
-                <Button Text="Show Track Info"
-                        Command="{Binding GetTrackInfoCommand}"
+                <Button Text="Show album info"
+                        Command="{Binding GetAlbumInfoCommand}"
                         Margin="0,0,0,40"/>
+
+                <Image Source="{Binding AlbumInfo.CoverXl}"/>
 
                 <Label Text="ID: "/>
                 <Label Text="{Binding Id}"/>
 
-                <Label Text="Artist: "/>
-                <Label Text="{Binding TrackInfo.Artist}"/>
-                
-                <Label Text="Title: "/>
-                <Label Text="{Binding TrackInfo.Title}"/>
+                <Label Text="Name: "/>
 
-                <Label Text="Link: "/>
-                <Label Text="{Binding TrackInfo.Link}"/>
+                <Label Text="{Binding AlbumInfo.Title}"/>
 
+                <Label Text="Release date: "/>
+                <Label Text="{Binding AlbumInfo.ReleaseDate}"/>
             </StackLayout>
         </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

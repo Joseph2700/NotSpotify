@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace NotSpotifyApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TrackPage : ContentPage
+    public partial class AlbumPage : ContentPage
     {
-        public TrackPage()
+        public AlbumPage()
         {
             InitializeComponent();
         }
