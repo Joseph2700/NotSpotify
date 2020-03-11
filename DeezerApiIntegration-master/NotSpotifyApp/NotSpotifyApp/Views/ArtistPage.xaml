@@ -51,7 +51,8 @@
                         Margin="0,30,0,30">
                 </Button>
 
-                <Entry Placeholder="Enter the artist's Deezer ID here" 
+                <Entry     Keyboard="Numeric"
+                           Placeholder="Enter the artist's Deezer ID here" 
                            Text="{Binding Artist.Id}" 
                            Margin="105,0,105,0"
                            FontSize="15" 

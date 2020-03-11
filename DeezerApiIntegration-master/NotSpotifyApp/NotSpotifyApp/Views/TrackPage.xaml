@@ -16,7 +16,8 @@
                        FontSize="40"
                        TextColor="Black"/>
 
-                <Entry Placeholder="Id"
+                <Entry Keyboard="Numeric"
+                       Placeholder="Id"
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding Track.Id}"
                        TextColor="Black"

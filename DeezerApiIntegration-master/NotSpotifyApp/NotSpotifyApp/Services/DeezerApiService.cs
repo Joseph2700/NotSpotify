@@ -14,10 +14,10 @@ namespace NotSpotifyApp.Services
         {
 			try
 			{
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
-				var result = await client.GetStringAsync($"{ApiConfig.ArtistUrl}{Id}");
+				HttpClient artistClient = new HttpClient();
+				artistClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				artistClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await artistClient.GetStringAsync($"{ApiConfig.ArtistUrl}{Id}");
 				return JsonConvert.DeserializeObject<Artist>(result);
 			}
 			catch (Exception ex)
@@ -31,10 +31,10 @@ namespace NotSpotifyApp.Services
 		{
 			try
 			{
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
-				var result = await client.GetStringAsync($"{ApiConfig.TrackUrl}{Id}");
+				HttpClient trackClient = new HttpClient();
+				trackClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				trackClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await trackClient.GetStringAsync($"{ApiConfig.TrackUrl}{Id}");
 				return JsonConvert.DeserializeObject<Track>(result);
 			}
 			catch (Exception ex)
@@ -48,10 +48,10 @@ namespace NotSpotifyApp.Services
 		{
 			try
 			{
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
-				var result = await client.GetStringAsync($"{ApiConfig.GenreUrl}{Id}");
+				HttpClient genreClient = new HttpClient();
+				genreClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				genreClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await genreClient.GetStringAsync($"{ApiConfig.GenreUrl}{Id}");
 				return JsonConvert.DeserializeObject<Genre>(result);
 			}
 			catch (Exception ex)

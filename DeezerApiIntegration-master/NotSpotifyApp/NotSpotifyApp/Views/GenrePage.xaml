@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
              x:Class="NotSpotifyApp.Views.GenrePage">
     <ContentPage.Content>
         
@@ -15,7 +16,8 @@
                        FontSize="40"
                        TextColor="Black"/>
 
-                <Entry Placeholder="ID"
+                <Entry Keyboard="Numeric"
+                       Placeholder="ID"
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding Genre.Id}"
                        TextColor="Black"
