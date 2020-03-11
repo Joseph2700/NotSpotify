@@ -11,5 +11,5 @@
     <local:HomePage Title="Home" IconImageSource="ic_home"/>
     <local:ArtistPage Title="Artists" IconImageSource="ic_mic"/>
     <local:TrackPage Title="Tracks" IconImageSource="ic_track"/>
-    <!--<local:GenrePage Title="Genre"/>-->
+    <local:GenrePage Title="Genre" IconImageSource="ic_genre"/>
 </TabbedPage>
