@@ -19,7 +19,7 @@
                 <Entry Keyboard="Numeric"
                        Placeholder="ID"
                        HorizontalOptions="FillAndExpand"
-                       Text="{Binding Genre.Id}"
+                       Text="{Binding Id}"
                        TextColor="Black"
                        Margin="5"/>
 
@@ -29,7 +29,7 @@
 
                 <Label Text="ID: "
                        Style="{StaticResource InfoLabel}"/>
-                <Label Text="{Binding GenreInfo.Id}"/>
+                <Label Text="{Binding Id}"/>
 
                 <Label Text="Name: "
                        Style="{StaticResource InfoLabel}"/>

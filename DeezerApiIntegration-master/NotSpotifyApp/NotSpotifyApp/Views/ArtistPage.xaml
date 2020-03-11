@@ -53,7 +53,7 @@
 
                 <Entry     Keyboard="Numeric"
                            Placeholder="Enter the artist's Deezer ID here" 
-                           Text="{Binding Artist.Id}" 
+                           Text="{Binding Id}" 
                            Margin="105,0,105,0"
                            FontSize="15" 
                            Grid.Row="1" 

@@ -16,7 +16,7 @@ namespace NotSpotifyApp.ViewModels
 {
 	public class GenrePageViewModel : BaseViewModel, INotifyPropertyChanged
 	{
-		IPageDialogService PageDialogueService { get; set; }
+		
 		protected IDeezerApiService _apiService;
 		public event PropertyChangedEventHandler PropertyChanged;
 		public DelegateCommand GetGenreInfoCommand { get; set; }
@@ -47,15 +47,5 @@ namespace NotSpotifyApp.ViewModels
 			}
 		}
 
-		public async Task<bool> CheckInternetConnection()
-		{
-			bool IsInternetAvailable = true;
-			if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-			{
-				IsInternetAvailable = false;
-				await App.Current.MainPage.DisplayAlert($"{AlertTextConstants.TitleText}", $"{AlertTextConstants.MessageText}", $"{AlertTextConstants.OptionButtonText}");
-			}
-			return IsInternetAvailable;
-		}
 	}
 }

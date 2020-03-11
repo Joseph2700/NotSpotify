@@ -19,7 +19,7 @@
                 <Entry Keyboard="Numeric"
                        Placeholder="Id"
                        HorizontalOptions="FillAndExpand"
-                       Text="{Binding Track.Id}"
+                       Text="{Binding Id}"
                        TextColor="Black"
                        Margin="5"/>
 
@@ -28,8 +28,11 @@
                         Margin="0,0,0,40"/>
 
                 <Label Text="ID: "/>
-                <Label Text="{Binding TrackInfo.Id}"/>
+                <Label Text="{Binding Id}"/>
 
+                <Label Text="Artist: "/>
+                <Label Text="{Binding TrackInfo.Artist}"/>
+                
                 <Label Text="Title: "/>
                 <Label Text="{Binding TrackInfo.Title}"/>
 

@@ -16,7 +16,7 @@ namespace NotSpotifyApp.ViewModels
 {
     public class TrackPageViewModel : BaseViewModel, INotifyPropertyChanged
     {
-        IPageDialogService PageDialogService { get; set; }
+        
         protected IDeezerApiService _apiService;
         public event PropertyChangedEventHandler PropertyChanged;
         public DelegateCommand GetTrackInfoCommand { get; set; }
@@ -39,23 +39,13 @@ namespace NotSpotifyApp.ViewModels
                 try
                 {
                     TrackInfo = await _apiService.GetTrackInfo(Id);
+                    
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine($"API EX {ex}");    
                 }
             }
-        }
-
-        public async Task<bool> CheckInternetConnection()
-        {
-            bool IsInternetAvaible = true;
-            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
-            {
-                IsInternetAvaible = false;
-                await App.Current.MainPage.DisplayAlert($"{AlertTextConstants.TitleText}", $"{AlertTextConstants.MessageText}", $"{AlertTextConstants.OptionButtonText}");
-            }
-            return IsInternetAvaible;
         }
     }
 }
