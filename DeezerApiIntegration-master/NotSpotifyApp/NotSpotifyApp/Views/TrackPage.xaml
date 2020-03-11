@@ -4,10 +4,38 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="NotSpotifyApp.Views.TrackPage">
+             x:Class="NotSpotifyApp.Views.TrackPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
-            
+            <StackLayout Margin="30">
+                <Label Text="Insert Track ID"
+                    
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="40"
+                       TextColor="Black"/>
+
+                <Entry Placeholder="Id"
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding Track.Id}"
+                       TextColor="Black"
+                       Margin="5"/>
+
+                <Button Text="Show Track Info"
+                        Command="{Binding GetTrackInfoCommand}"
+                        Margin="0,0,0,40"/>
+
+                <Label Text="ID: "/>
+                <Label Text="{Binding TrackInfo.Id}"/>
+
+                <Label Text="Title: "/>
+                <Label Text="{Binding TrackInfo.Title}"/>
+
+                <Label Text="Link: "/>
+                <Label Text="{Binding TrackInfo.Link}"/>
+
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
