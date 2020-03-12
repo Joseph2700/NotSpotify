@@ -12,9 +12,7 @@
             <StackLayout Margin="30">
                 <Label Text="Insert genre ID"
                        HorizontalOptions="Center"
-                       FontAttributes="Bold"
-                       FontSize="40"
-                       TextColor="Black"/>
+                       Style="{StaticResource Title}"/>
 
                 <Entry Keyboard="Numeric"
                        Placeholder="Enter the music genre's Deezer ID here"
@@ -41,20 +39,16 @@
                        Text="{Binding GenreInfo.Name} "/>
 
                 <Label  Text="ID: "
-                        FontSize="18" 
-                        FontAttributes="Bold"/>
+                        Style="{StaticResource InfoLabel}"/>
                 
-                <Label FontSize="17"
-                       TextColor="Black"
+                <Label Style="{StaticResource Information}"
                     Text="{Binding Id}"/>
 
                 <Label Text="Type: "
-                       FontSize="18" 
-                       FontAttributes="Bold"/>
+                       Style="{StaticResource InfoLabel}"/>
                 
                 <Label Text="{Binding GenreInfo.Type}"
-                       FontSize="17"
-                       TextColor="Black"/>
+                       Style="{StaticResource Information}"/>
             </StackLayout>
         </ScrollView>
         

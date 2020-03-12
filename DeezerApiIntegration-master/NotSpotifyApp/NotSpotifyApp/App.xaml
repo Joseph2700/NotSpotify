@@ -18,6 +18,12 @@
             <Style x:Key="Information" TargetType="Label">
                 <Setter Property="FontSize" Value="17"/>
             </Style>
+
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

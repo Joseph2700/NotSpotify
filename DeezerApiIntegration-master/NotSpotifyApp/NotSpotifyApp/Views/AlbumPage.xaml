@@ -13,9 +13,7 @@
             <StackLayout Margin="30">
                 <Label Text="Insert album ID"
                        HorizontalOptions="Center"
-                       FontAttributes="Bold"
-                       FontSize="40"
-                       TextColor="Black"/>
+                       Style="{StaticResource Title}"/>
 
                 <Entry Keyboard="Numeric"
                        Placeholder="Enter the album's Deezer ID here"
@@ -40,36 +38,28 @@
                        HorizontalOptions="CenterAndExpand" 
                        Text="{Binding AlbumInfo.Title} "/>
 
-                <Label FontSize="18" 
-                       FontAttributes="Bold"
+                <Label Style="{StaticResource InfoLabel}"
                        Text="Release date: "/>
-                
-                <Label FontSize="17"
-                       TextColor="Black"
+
+                <Label Style="{StaticResource Information}"
                     Text="{Binding AlbumInfo.ReleaseDate}"/>
 
-                <Label FontSize="18" 
-                       FontAttributes="Bold"
+                <Label Style="{StaticResource InfoLabel}"
                        Text="Fans: "/>
-                
-                <Label FontSize="17"
-                       TextColor="Black"
+
+                <Label Style="{StaticResource Information}"
                     Text="{Binding AlbumInfo.Fans}"/>
 
-                <Label FontSize="18" 
-                       FontAttributes="Bold"
+                <Label Style="{StaticResource InfoLabel}"
                        Text="Number of tracks: "/>
-                
-                <Label FontSize="17"
-                       TextColor="Black"
+
+                <Label Style="{StaticResource Information}"
                     Text="{Binding AlbumInfo.NumberOfTracks}"/>
 
-                <Label FontSize="18"
-                       FontAttributes="Bold"
+                <Label Style="{StaticResource InfoLabel}"
                        Text="Tracklist:  "/>
 
-                <Label FontSize="17"
-                       TextColor="Black"
+                <Label Style="{StaticResource Information}"
                        Text="{Binding AlbumInfo.Tracklist}"/>
                 
                 
