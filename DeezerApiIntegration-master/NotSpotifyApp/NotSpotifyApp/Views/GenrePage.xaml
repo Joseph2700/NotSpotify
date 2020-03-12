@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
-             
              x:Class="NotSpotifyApp.Views.GenrePage">
     <ContentPage.Content>
         
@@ -18,7 +17,7 @@
                        TextColor="Black"/>
 
                 <Entry Keyboard="Numeric"
-                       Placeholder="ID"
+                       Placeholder="Enter the music genre's Deezer ID here"
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding Id}"
                        TextColor="Black"

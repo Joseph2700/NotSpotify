@@ -18,7 +18,7 @@
                        TextColor="Black"/>
 
                 <Entry Keyboard="Numeric"
-                       Placeholder="ID"
+                       Placeholder="Enter the album's Deezer ID here"
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding Id}"
                        TextColor="Black"
