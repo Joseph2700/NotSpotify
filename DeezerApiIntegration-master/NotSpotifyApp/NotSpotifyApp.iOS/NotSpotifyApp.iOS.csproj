@@ -139,9 +139,9 @@
     <BundleResource Include="Resources\ic_mic.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_track.png" />
+    <AndroidResource Include="Resources\ic_genre.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\ic_genre.png" />
+    <BundleResource Include="Resources\ic_album.png" />
   </ItemGroup>
 </Project>

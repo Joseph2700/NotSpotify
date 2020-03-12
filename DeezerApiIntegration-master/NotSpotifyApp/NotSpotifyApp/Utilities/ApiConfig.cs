@@ -9,12 +9,11 @@ namespace NotSpotifyApp.Utilities
     {
         public const string ArtistUrl = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
         public const string AlbumUrl = "https://deezerdevs-deezer.p.rapidapi.com/album/";
-        public const string TrackUrl = "https://deezerdevs-deezer.p.rapidapi.com/track/";
         public const string GenreUrl = "https://deezerdevs-deezer.p.rapidapi.com/genre/";
         public const string ApiHost = "x-rapidapi-host";
         public const string ApiHostValue = "deezerdevs-deezer.p.rapidapi.com";
         public const string ApiKey = "x-rapidapi-key";
-        public const string ApiKeyValue = "069264c0f2msha5bc2069b48b455p1cf35ajsnf9502b386e2a";
+        public const string ApiKeyValue = "Insert api key value here";
         
     }
 }

@@ -37,5 +37,22 @@ namespace NotSpotifyApp.Models
 
         [JsonProperty("type")]
         public string Type { get; set; }
+
+        [JsonProperty("genres")]
+        public Genre Genre { get; set; }
+
+        [JsonProperty("nb_tracks")]
+        public int NumberOfTracks { get; set; }
+
+        [JsonProperty("fans")]
+        public int Fans { get; set; }
+
+        [JsonProperty("rating")]
+        public int Rating { get; set; }
+
+        [JsonProperty("artist")]
+        public Artist Artist { get; set; }
+
+
     }
 }

@@ -34,15 +34,45 @@
 
                 <Image Source="{Binding AlbumInfo.CoverXl}"/>
 
-                <Label FontSize="17" Text="ID: "/>
-                <Label Text="{Binding Id}"/>
+                <Label TextColor="DarkGoldenrod"
+                       FontAttributes="Bold"
+                       FontSize="30" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Text="{Binding AlbumInfo.Title} "/>
 
-                <Label FontSize="17" Text="Name: "/>
+                <Label FontSize="18" 
+                       FontAttributes="Bold"
+                       Text="Release date: "/>
+                
+                <Label FontSize="17"
+                       TextColor="Black"
+                    Text="{Binding AlbumInfo.ReleaseDate}"/>
 
-                <Label Text="{Binding AlbumInfo.Title}"/>
+                <Label FontSize="18" 
+                       FontAttributes="Bold"
+                       Text="Fans: "/>
+                
+                <Label FontSize="17"
+                       TextColor="Black"
+                    Text="{Binding AlbumInfo.Fans}"/>
 
-                <Label FontSize="17" Text="Release date: "/>
-                <Label Text="{Binding AlbumInfo.ReleaseDate}"/>
+                <Label FontSize="18" 
+                       FontAttributes="Bold"
+                       Text="Number of tracks: "/>
+                
+                <Label FontSize="17"
+                       TextColor="Black"
+                    Text="{Binding AlbumInfo.NumberOfTracks}"/>
+
+                <Label FontSize="18"
+                       FontAttributes="Bold"
+                       Text="Tracklist:  "/>
+
+                <Label FontSize="17"
+                       TextColor="Black"
+                       Text="{Binding AlbumInfo.Tracklist}"/>
+                
+                
             </StackLayout>
         </ScrollView>
 

@@ -36,26 +36,26 @@
                         HorizontalOptions="CenterAndExpand">
                 </Button>
 
-                <Image Source="{Binding ArtistInfo.PictureXL}" HorizontalOptions="FillAndExpand"/>
-                <Label Text="{Binding ArtistInfo.Name}" FontAttributes="Bold" FontSize="30" TextColor="BurlyWood" HorizontalOptions="StartAndExpand"/>
+                <Image Source="{Binding ArtistInfo.PictureXL}" 
+                       HorizontalOptions="FillAndExpand">
+                </Image>
+                
+                    <Label Text="{Binding ArtistInfo.Name}" FontAttributes="Bold" FontSize="30" TextColor="DarkGoldenrod" HorizontalOptions="CenterAndExpand"/>
 
-                <Label Text="Number of fans: " FontSize="17"/>
-                <Label Text="{Binding ArtistInfo.NumberOfFans}" FontAttributes="Bold" FontSize="18"/>
+                <Label Text="Number of fans: " FontAttributes="Bold" FontSize="18"/>
+                <Label Text="{Binding ArtistInfo.NumberOfFans}" TextColor="Black" FontSize="17"/>
 
-                <Label Text="Deezer link: " FontSize="17"/>
-                <Label Text="{Binding ArtistInfo.Link}" FontAttributes="Bold" FontSize="18" />
+                <Label Text="Number of albums: " FontAttributes="Bold" FontSize="18"/>
+                <Label Text="{Binding ArtistInfo.NumberOfAlbums}" TextColor="Black" FontSize="17"/>
 
-                <Label Text="Sharing link: " FontSize="17"/>
-                <Label Text="{Binding ArtistInfo.Share}" FontAttributes="Bold" FontSize="18"  />
+                <Label Text="Deezer link: " FontAttributes="Bold" FontSize="18"/>
+                <Label Text="{Binding ArtistInfo.Link}" TextColor="Black" FontSize="17" />
 
-                <Label Text="Number of albums: " FontSize="17"/>
-                <Label Text="{Binding ArtistInfo.NumberOfAlbums}" FontAttributes="Bold" FontSize="18"/>
+                <Label Text="Sharing link: " FontAttributes="Bold" FontSize="18"/>
+                <Label Text="{Binding ArtistInfo.Share}" TextColor="Black" FontSize="17"  />
 
-                <Label Text="Artist radio: " FontSize="17"/>
-                <Label Text="{Binding ArtistInfo.Radio}" FontAttributes="Bold" FontSize="18" />
-
-                <Label Text="Sharing link: " FontSize="17"/>
-                <Label Text="{Binding ArtistInfo.Tracklist}" FontAttributes="Bold" FontSize="18"/>
+                <Label Text="Sharing link: " FontAttributes="Bold" FontSize="18"/>
+                <Label Text="{Binding ArtistInfo.Tracklist}" TextColor="Black" FontSize="17"/>
             </StackLayout>
         </ScrollView>
 

@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
+             
              x:Class="NotSpotifyApp.Views.GenrePage">
     <ContentPage.Content>
         
@@ -32,14 +33,29 @@
                         HorizontalOptions="CenterAndExpand">
                 </Button>
 
+                <Image Source="{Binding GenreInfo.PictureBig}"/>
 
-                <Label FontSize="17" Text="ID: "
-                       Style="{StaticResource InfoLabel}"/>
-                <Label Text="{Binding Id}"/>
+                <Label TextColor="DarkGoldenrod"
+                       FontAttributes="Bold"
+                       FontSize="30" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Text="{Binding GenreInfo.Name} "/>
 
-                <Label FontSize="17" Text="Name: "
-                       Style="{StaticResource InfoLabel}"/>
-                <Label Text="{Binding GenreInfo.Name}"/>
+                <Label  Text="ID: "
+                        FontSize="18" 
+                        FontAttributes="Bold"/>
+                
+                <Label FontSize="17"
+                       TextColor="Black"
+                    Text="{Binding Id}"/>
+
+                <Label Text="Type: "
+                       FontSize="18" 
+                       FontAttributes="Bold"/>
+                
+                <Label Text="{Binding GenreInfo.Type}"
+                       FontSize="17"
+                       TextColor="Black"/>
             </StackLayout>
         </ScrollView>
         
