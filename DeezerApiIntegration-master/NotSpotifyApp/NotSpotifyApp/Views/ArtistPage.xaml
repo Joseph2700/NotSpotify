@@ -19,8 +19,7 @@
 
                 <Entry     Keyboard="Numeric"
                            Placeholder="Enter the artist's Deezer ID here" 
-                           Text="{Binding Id}" 
-                           FontSize="15" 
+                           Text="{Binding Id}"
                            VerticalOptions="Center">
                 </Entry>
 
