@@ -25,7 +25,7 @@ namespace NotSpotifyApp.ViewModels
 
         public ArtistPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeezerApiService apiService) : base(navigationService, apiService)
         {
-            _apiService = apiService;
+           
             GetArtistInfoCommand = new DelegateCommand(async () =>
             {
                 await GetArtistData();
@@ -37,20 +37,10 @@ namespace NotSpotifyApp.ViewModels
            
             if (await CheckInternetConnection())
             {
-                try
-                {
-
                     ArtistInfo = await _apiService.GetArtistInfo(Id);
-
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"API EXCEPTION {ex}");
-                }
             }
         }
-
-            
+           
     }
 }
 

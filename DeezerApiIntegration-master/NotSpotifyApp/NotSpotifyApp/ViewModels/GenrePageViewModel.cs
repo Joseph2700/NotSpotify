@@ -25,7 +25,7 @@ namespace NotSpotifyApp.ViewModels
 
 		public GenrePageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
 		{
-			_apiService = apiService;
+			
 			GetGenreInfoCommand = new DelegateCommand(async () =>
 			{
 				await GetGenreData();
@@ -36,14 +36,8 @@ namespace NotSpotifyApp.ViewModels
 		{
 			if (await CheckInternetConnection())
 			{
-				try
-				{
 					GenreInfo = await _apiService.GetGenreInfo(Id);
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine($"API EXCEPTION {ex}");
-				}
+			
 			}
 		}
 

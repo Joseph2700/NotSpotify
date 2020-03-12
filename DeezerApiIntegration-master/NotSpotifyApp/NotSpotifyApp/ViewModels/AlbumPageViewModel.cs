@@ -24,7 +24,7 @@ namespace NotSpotifyApp.ViewModels
 
 			public AlbumPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
 			{
-				_apiService = apiService;
+				
 				GetAlbumInfoCommand = new DelegateCommand(async () =>
 				{
 					await GetAlbumData();
@@ -35,17 +35,9 @@ namespace NotSpotifyApp.ViewModels
 			{
 				if (await CheckInternetConnection())
 				{
-					try
-					{
 						AlbumInfo = await _apiService.GetAlbumInfo(Id);				
-					}
-					catch (Exception ex)
-					{
-						Debug.WriteLine($"API EXCEPTION {ex}");
-					}
 				}
 			}
-
 		}
 }
 
