@@ -30,7 +30,7 @@
                         HorizontalOptions="CenterAndExpand">
                 </Button>
 
-                <Image Source="{Binding GenreInfo.PictureBig}"/>
+                <Image Source="{Binding GenreInfo.PictureXl}"/>
 
                 <Label TextColor="DarkGoldenrod"
                        FontAttributes="Bold"
