@@ -18,7 +18,7 @@
                        TextColor="Black"/>
 
                 <Entry Keyboard="Numeric"
-                       Placeholder="ID"
+                       Placeholder="Enter the album's Deezer ID here"
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding Id}"
                        TextColor="Black"
@@ -34,15 +34,14 @@
 
                 <Image Source="{Binding AlbumInfo.CoverXl}"/>
 
-                <Label FontSize="17" Text="ID: "/>
-                <Label Text="{Binding Id}"/>
+                <Label Style="{StaticResource InfoLabel}" Text="ID: "/>
+                <Label Text="{Binding Id}" Style="{StaticResource Information}"/>
 
-                <Label FontSize="17" Text="Name: "/>
+                <Label Style="{StaticResource InfoLabel}" Text="Name: "/>
+                <Label Text="{Binding AlbumInfo.Title}" Style="{StaticResource Information}"/>
 
-                <Label Text="{Binding AlbumInfo.Title}"/>
-
-                <Label FontSize="17" Text="Release date: "/>
-                <Label Text="{Binding AlbumInfo.ReleaseDate}"/>
+                <Label Style="{StaticResource InfoLabel}" Text="Release date: "/>
+                <Label Text="{Binding AlbumInfo.ReleaseDate}" Style="{StaticResource Information}"/>
             </StackLayout>
         </ScrollView>
 

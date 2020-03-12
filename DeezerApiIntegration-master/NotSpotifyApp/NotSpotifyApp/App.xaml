@@ -11,7 +11,12 @@
         <ResourceDictionary>
             <Style x:Key="InfoLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontSize" Value="17"/>
+            </Style>
+
+            <Style x:Key="Information" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

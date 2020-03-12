@@ -17,7 +17,7 @@
                        TextColor="Black"/>
 
                 <Entry Keyboard="Numeric"
-                       Placeholder="ID"
+                       Placeholder="Enter the music genre's Deezer ID here"
                        HorizontalOptions="FillAndExpand"
                        Text="{Binding Id}"
                        TextColor="Black"
@@ -33,13 +33,13 @@
                 </Button>
 
 
-                <Label FontSize="17" Text="ID: "
+                <Label Text="ID: "
                        Style="{StaticResource InfoLabel}"/>
-                <Label Text="{Binding Id}"/>
+                <Label Text="{Binding Id}" Style="{StaticResource Information}"/>
 
-                <Label FontSize="17" Text="Name: "
+                <Label Text="Name: "
                        Style="{StaticResource InfoLabel}"/>
-                <Label Text="{Binding GenreInfo.Name}"/>
+                <Label Text="{Binding GenreInfo.Name}" Style="{StaticResource Information}"/>
             </StackLayout>
         </ScrollView>
         
