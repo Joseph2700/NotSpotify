@@ -14,10 +14,10 @@ namespace NotSpotifyApp.Services
         {
 			try
 			{
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
-				client.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
-				var result = await client.GetStringAsync($"{ApiConfig.ArtistUrl}{Id}");
+				HttpClient artistClient = new HttpClient();
+				artistClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				artistClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await artistClient.GetStringAsync($"{ApiConfig.ArtistUrl}{Id}");
 				return JsonConvert.DeserializeObject<Artist>(result);
 			}
 			catch (Exception ex)
@@ -26,5 +26,39 @@ namespace NotSpotifyApp.Services
 			}
 			return default;
         }
-    }
+
+		public async Task<Album> GetAlbumInfo(string Id)
+		{
+			try
+			{
+				HttpClient albumClient = new HttpClient();
+				albumClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				albumClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await albumClient.GetStringAsync($"{ApiConfig.AlbumUrl}{Id}");
+				return JsonConvert.DeserializeObject<Album>(result);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"API EXCEPTION {ex}");
+			}
+			return default;
+		}
+
+		public async Task<Genre> GetGenreInfo(string Id)
+		{
+			try
+			{
+				HttpClient genreClient = new HttpClient();
+				genreClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				genreClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await genreClient.GetStringAsync($"{ApiConfig.GenreUrl}{Id}");
+				return JsonConvert.DeserializeObject<Genre>(result);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"API EXCEPTION {ex}");
+			}
+			return default;
+		}
+	}
 }

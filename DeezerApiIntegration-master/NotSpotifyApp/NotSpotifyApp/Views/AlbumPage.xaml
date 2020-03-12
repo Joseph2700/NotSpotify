@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="NotSpotifyApp.Views.AlbumPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+
+            <StackLayout Margin="30">
+                <Label Text="Insert album ID"
+                       HorizontalOptions="Center"
+                       Style="{StaticResource Title}"/>
+
+                <Entry Keyboard="Numeric"
+                       Placeholder="Enter the album's Deezer ID here"
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding Id}"
+                       TextColor="Black"
+                       Margin="5"/>
+
+                <Button Text="Show album info"
+                        Command="{Binding GetAlbumInfoCommand}"
+                        BorderColor="AliceBlue" 
+                        BackgroundColor="CadetBlue" 
+                        FontAttributes="Bold" 
+                        CornerRadius="50" 
+                          HorizontalOptions="CenterAndExpand"/>
+
+                <Image Source="{Binding AlbumInfo.CoverXl}"/>
+
+                <Label TextColor="DarkGoldenrod"
+                       FontAttributes="Bold"
+                       FontSize="30" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Text="{Binding AlbumInfo.Title} "/>
+
+                <Label Style="{StaticResource InfoLabel}"
+                       Text="Release date: "/>
+
+                <Label Style="{StaticResource Information}"
+                    Text="{Binding AlbumInfo.ReleaseDate}"/>
+
+                <Label Style="{StaticResource InfoLabel}"
+                       Text="Fans: "/>
+
+                <Label Style="{StaticResource Information}"
+                    Text="{Binding AlbumInfo.Fans}"/>
+
+                <Label Style="{StaticResource InfoLabel}"
+                       Text="Number of tracks: "/>
+
+                <Label Style="{StaticResource Information}"
+                    Text="{Binding AlbumInfo.NumberOfTracks}"/>
+
+                <Label Style="{StaticResource InfoLabel}"
+                       Text="Tracklist:  "/>
+
+                <Label Style="{StaticResource Information}"
+                       Text="{Binding AlbumInfo.Tracklist}"/>
+                
+                
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -7,7 +7,8 @@
              x:Class="NotSpotifyApp.Views.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="The home page will be here soon!"
+                   TextColor="Red"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

@@ -8,6 +8,22 @@
              mc:Ignorable="d"
              x:Class="NotSpotifyApp.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="InfoLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
 
+            <Style x:Key="Information" TargetType="Label">
+                <Setter Property="FontSize" Value="17"/>
+            </Style>
+
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
