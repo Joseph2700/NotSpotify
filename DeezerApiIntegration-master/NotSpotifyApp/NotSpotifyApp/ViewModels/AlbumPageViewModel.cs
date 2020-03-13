@@ -15,8 +15,6 @@ namespace NotSpotifyApp.ViewModels
 	{
 		public class AlbumPageViewModel : BaseViewModel, INotifyPropertyChanged
 		{
-
-			protected IDeezerApiService _apiService;
 			public event PropertyChangedEventHandler PropertyChanged;
 			public DelegateCommand GetAlbumInfoCommand { get; set; }
 			public Album AlbumInfo { get; set; }
@@ -35,7 +33,7 @@ namespace NotSpotifyApp.ViewModels
 			{
 				if (await CheckInternetConnection())
 				{
-						AlbumInfo = await _apiService.GetAlbumInfo(Id);				
+						AlbumInfo = await ApiService.GetAlbumInfo(Id);				
 				}
 			}
 		}

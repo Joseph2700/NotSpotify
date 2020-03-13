@@ -16,7 +16,6 @@ namespace NotSpotifyApp.ViewModels
 {
     public class ArtistPageViewModel : BaseViewModel, INotifyPropertyChanged
     {
-        protected IDeezerApiService _apiService; 
         public event PropertyChangedEventHandler PropertyChanged;
         public DelegateCommand GetArtistInfoCommand { get; set; }
         public Artist ArtistInfo { get; set; }
@@ -37,7 +36,7 @@ namespace NotSpotifyApp.ViewModels
            
             if (await CheckInternetConnection())
             {
-                    ArtistInfo = await _apiService.GetArtistInfo(Id);
+                    ArtistInfo = await ApiService.GetArtistInfo(Id);
             }
         }
            

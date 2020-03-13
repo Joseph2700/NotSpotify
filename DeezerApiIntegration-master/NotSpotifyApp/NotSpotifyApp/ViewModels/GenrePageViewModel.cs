@@ -15,9 +15,7 @@ using Xamarin.Essentials;
 namespace NotSpotifyApp.ViewModels
 {
 	public class GenrePageViewModel : BaseViewModel, INotifyPropertyChanged
-	{
-		
-		protected IDeezerApiService _apiService;
+	{		
 		public event PropertyChangedEventHandler PropertyChanged;
 		public DelegateCommand GetGenreInfoCommand { get; set; }
 		public Genre GenreInfo { get; set; }
@@ -36,7 +34,7 @@ namespace NotSpotifyApp.ViewModels
 		{
 			if (await CheckInternetConnection())
 			{
-					GenreInfo = await _apiService.GetGenreInfo(Id);
+					GenreInfo = await ApiService.GetGenreInfo(Id);
 			
 			}
 		}
