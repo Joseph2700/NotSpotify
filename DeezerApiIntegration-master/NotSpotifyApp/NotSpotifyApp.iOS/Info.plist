@@ -26,6 +26,8 @@
     <string>NotSpotifyApp</string>
     <key>CFBundleIdentifier</key>
     <string>com.companyname.NotSpotifyApp</string>
+    <key>NSFaceIDUsageDescription</key>  
+    <string>Need your face to unlock secrets!</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>UILaunchStoryboardName</key>

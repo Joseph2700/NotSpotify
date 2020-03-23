@@ -6,11 +6,53 @@
              mc:Ignorable="d"
              x:Class="NotSpotifyApp.Views.HomePage">
     <ContentPage.Content>
+
         <StackLayout>
-            <Label Text="The home page will be here soon!"
-                   TextColor="Red"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Top artists" FontSize="20" FontAttributes="Bold" Margin="165,0,0,0"/>
+            <CarouselView ItemsSource="{Binding Artists}" PeekAreaInsets="320" BackgroundColor="#F44336">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="270" CornerRadius="20" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Image Source="{Binding Picture}"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <Label Text="Top albums" FontSize="20" FontAttributes="Bold" Margin="165,0,0,0"/>
+            <CarouselView ItemsSource="{Binding Albums}" PeekAreaInsets="320" BackgroundColor="#448AFF">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="270" CornerRadius="20" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Image Source="{Binding CoverXl}"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Label Text="Top tracks" FontSize="20" FontAttributes="Bold" Margin="165,0,0,0"/>
+            <CarouselView ItemsSource="{Binding Tracks}" PeekAreaInsets="320" BackgroundColor="#F44336">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="270" CornerRadius="20" VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Image Source="{Binding CoverXl}"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </StackLayout>
+
     </ContentPage.Content>
-</ContentPage>
+</ContentPage>  
