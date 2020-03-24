@@ -10,10 +10,9 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class ArtistInfoPageViewModel : BaseViewModel
+    public class ArtistInfoPageViewModel : BaseViewModel, IInitialize
     {
         public Artist ArtistInfo { get; set; }
-        public IDeezerApiService apiService { get; set; }
         public DelegateCommand GetArtistInfoCommand { get; set; }
         public string Id { get; set; }
 
