@@ -21,7 +21,6 @@ namespace NotSpotifyApp.ViewModels
         private readonly INavigationService _navigationService;
         public ObservableCollection<Artist> ModelArtists { get; set; } = new ObservableCollection<Artist>();
         public DelegateCommand SearchArtistCommand { get; set; }
-        public Artist ArtistInfo { get; set; }
         public string Id { get; set; }
 
 

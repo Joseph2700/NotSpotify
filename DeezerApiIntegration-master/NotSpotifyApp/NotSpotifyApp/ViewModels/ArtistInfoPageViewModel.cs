@@ -2,6 +2,7 @@
 using NotSpotifyApp.Services;
 using Prism.Commands;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class ArtistInfoPageViewModel : IInitialize
+    public class ArtistInfoPageViewModel : BaseViewModel
     {
         public Artist ArtistInfo { get; set; }
         public IDeezerApiService apiService { get; set; }
@@ -18,10 +19,14 @@ namespace NotSpotifyApp.ViewModels
 
         public void Initialize(INavigationParameters parameters) 
         {
-            Id = parameters["Artist id"].ToString();
+            if(parameters.ContainsKey("Artist id"))
+            {
+                Id = parameters["Artist id"].ToString();
+            }
+           
         }
 
-        public ArtistInfoPageViewModel()
+        public ArtistInfoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeezerApiService apiService) : base(navigationService, apiService)
         {
             GetArtistInfoCommand = new DelegateCommand(async () =>
             {
@@ -30,12 +35,11 @@ namespace NotSpotifyApp.ViewModels
 
             GetArtistInfoCommand.Execute();
 
-
         }
 
         async Task GetArtistData()
         {
-            ArtistInfo = await apiService.GetArtistInfo(Id);
+            ArtistInfo = await ApiService.GetArtistInfo(Id);
         }
     }
 }

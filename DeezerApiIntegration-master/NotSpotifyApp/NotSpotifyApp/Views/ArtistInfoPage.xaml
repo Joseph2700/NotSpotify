@@ -8,8 +8,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Button Text="Show artist info" 
-                        Command="{Binding GetArtistInfoCommand}"/>
+               
                 <Image Source="{Binding ArtistInfo.PictureXL}"
                        HorizontalOptions="FillAndExpand" WidthRequest="150" HeightRequest="150"/>
                 <Label Text="{Binding ArtistInfo.Name}"/>
