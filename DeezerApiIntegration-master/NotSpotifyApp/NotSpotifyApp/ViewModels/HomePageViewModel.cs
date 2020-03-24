@@ -19,11 +19,10 @@ namespace NotSpotifyApp.ViewModels
 
         private ObservableCollection<Artist> _artists;
         private ObservableCollection<Album> _albums;
-        private ObservableCollection<Album> _tracks;
+        private ObservableCollection<Track> _tracks;
 
         public HomePageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeezerApiService apiService) : base(navigationService, apiService)
-        {
-            
+        {         
             _artists = new ObservableCollection<Artist>();
             _artists.Add(new Artist { Name = "Lil Uzi Vert", Picture = "LilUziVert.jpg" });
             _artists.Add(new Artist { Name = "NCT 127", Picture = "NCT127.jpg" });
@@ -41,12 +40,12 @@ namespace NotSpotifyApp.ViewModels
             _albums.Add(new Album { Title = "T R A P S O U L", CoverXl = "Trapsoul.jpg" });
             _albums.Add(new Album { Title = "Blond", CoverXl = "Blond.jpg" });
 
-            _tracks = new ObservableCollection<Album>();
-            _tracks.Add(new Album { Title = "YHLQMDLG",  CoverXl = "YHLQMDLG.jpg" });
-            _tracks.Add(new Album { Title = "Saturation", CoverXl = "Saturation.jpg" });
-            _tracks.Add(new Album { Title = "T R A P S O U L", CoverXl = "Trapsoul.jpg" });
-            _tracks.Add(new Album { Title = "Blond", CoverXl = "Blond.jpg" });
-            _tracks.Add(new Album { Title = "Blond", CoverXl = "Blond.jpg" });
+            _tracks = new ObservableCollection<Track>();
+            _tracks.Add(new Track { Rank = 1,Title = "The Box - Roddy Rich"});
+            _tracks.Add(new Track { Rank = 2, Title = "Don't Start now - Dua Lipa"});
+            _tracks.Add(new Track { Rank = 3, Title = "Life Is Good - Future ft Drake"});
+            _tracks.Add(new Track { Rank = 4, Title = "Blinding Lights - The Weeknd"});
+            _tracks.Add(new Track { Rank = 5, Title = "Circles - Post Malone"});
 
         }
 
@@ -82,7 +81,7 @@ namespace NotSpotifyApp.ViewModels
             }
         }
 
-        public ObservableCollection<Album> Tracks
+        public ObservableCollection<Track> Tracks
         {
             get
             {

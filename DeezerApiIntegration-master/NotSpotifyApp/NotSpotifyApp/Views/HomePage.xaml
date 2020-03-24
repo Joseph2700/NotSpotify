@@ -39,19 +39,18 @@
             </CarouselView>
 
             <Label Text="Top tracks" FontSize="20" FontAttributes="Bold" Margin="165,0,0,0"/>
-            <CarouselView ItemsSource="{Binding Tracks}" PeekAreaInsets="320" BackgroundColor="#F44336">
-                <CarouselView.ItemTemplate>
+            <ListView ItemsSource="{Binding Tracks}" BackgroundColor="Wheat">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
-                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="270" CornerRadius="20" VerticalOptions="CenterAndExpand">
-                                <StackLayout>
-                                    <Image Source="{Binding CoverXl}"/>
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Rank}" FontSize="20" TextColor="Red" FontAttributes="Bold" Margin="5,0,0,0"/>
+                                <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold"/>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
 
     </ContentPage.Content>

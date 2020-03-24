@@ -9,6 +9,7 @@
              x:Class="NotSpotifyApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            
             <Style x:Key="InfoLabel" TargetType="Label">
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontSize" Value="18"/>

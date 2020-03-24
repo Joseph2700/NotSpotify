@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NotSpotifyApp.Views.ArtistInfoPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="Show artist info" 
+                        Command="{Binding GetArtistInfoCommand}"/>
+                <Image Source="{Binding ArtistInfo.PictureXL}"
+                       HorizontalOptions="FillAndExpand" WidthRequest="150" HeightRequest="150"/>
+                <Label Text="{Binding ArtistInfo.Name}"/>
+
+                <Label Text="{Binding ArtistInfo.NumberOfFans}"/>
+                <Label Text="{Binding ArtistInfo.NumberOfAlbums}"/>
+                <Label Text="{Binding ArtistInfo.TrackList}"/>
+                <Label Text="{Binding ArtistInfo.Link}"/>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

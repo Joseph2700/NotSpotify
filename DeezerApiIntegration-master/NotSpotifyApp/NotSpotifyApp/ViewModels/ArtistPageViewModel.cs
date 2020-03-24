@@ -6,6 +6,7 @@ using Prism.Navigation;
 using Prism.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
@@ -17,28 +18,46 @@ namespace NotSpotifyApp.ViewModels
     public class ArtistPageViewModel : BaseViewModel, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public DelegateCommand GetArtistInfoCommand { get; set; }
+        private readonly INavigationService _navigationService;
+        public ObservableCollection<Artist> ModelArtists { get; set; } = new ObservableCollection<Artist>();
+        public DelegateCommand SearchArtistCommand { get; set; }
         public Artist ArtistInfo { get; set; }
         public string Id { get; set; }
 
 
         public ArtistPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeezerApiService apiService) : base(navigationService, apiService)
         {
-           
-            GetArtistInfoCommand = new DelegateCommand(async () =>
+            _navigationService = navigationService;
+            LoadModelArtists();
+                      
+            SearchArtistCommand = new DelegateCommand(async () =>
             {
-                await GetArtistData();
+                await SearchArtist();
             });
         }
 
-        async Task GetArtistData()
+        async Task SearchArtist()
         {
-           
+            var ArtistID = new NavigationParameters();
+            ArtistID.Add("Artist id", Id);
+
             if (await CheckInternetConnection())
             {
-                    ArtistInfo = await ApiService.GetArtistInfo(Id);
+                var navigation = _navigationService.NavigateAsync(NavigationConstants.ArtistInfoPage, ArtistID);
             }
         }
+
+
+        public void LoadModelArtists()
+        {
+            ModelArtists.Add(new Artist() { Picture = "BillieEilish.jpg" });
+            ModelArtists.Add(new Artist() { Picture = "JheneAiko.jpg" });
+            ModelArtists.Add(new Artist() { Picture = "LilUziVert.jpg" });
+            ModelArtists.Add(new Artist() { Picture = "LilBabyjpg" });
+            ModelArtists.Add(new Artist() { Picture = "BadBunny.jpg" });
+        }
+
+        
            
     }
 }
