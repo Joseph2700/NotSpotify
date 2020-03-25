@@ -13,7 +13,7 @@ namespace NotSpotifyApp.Utilities
         public const string ApiHost = "x-rapidapi-host";
         public const string ApiHostValue = "deezerdevs-deezer.p.rapidapi.com";
         public const string ApiKey = "x-rapidapi-key";
-        public const string ApiKeyValue = "Insert the api key here";
+        public const string ApiKeyValue = "";
         
     }
 }
