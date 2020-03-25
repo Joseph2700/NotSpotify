@@ -4,21 +4,127 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundImageSource="WBackgroundPicture.jpg"
              x:Class="NotSpotifyApp.Views.ArtistInfoPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-               
-                <Image Source="{Binding ArtistInfo.PictureXL}"
-                       HorizontalOptions="FillAndExpand" WidthRequest="150" HeightRequest="150"/>
-                <Label Text="{Binding ArtistInfo.Name}"/>
+            
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <Label Text="{Binding ArtistInfo.NumberOfFans}"/>
-                <Label Text="{Binding ArtistInfo.NumberOfAlbums}"/>
-                <Label Text="{Binding ArtistInfo.TrackList}"/>
-                <Label Text="{Binding ArtistInfo.Link}"/>
-                
-            </StackLayout>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White"/>
+
+                    <Label Grid.Row="0"
+                           Grid.ColumnSpan="4"
+                           Text="{Binding ArtistInfo.Name}"
+                           HorizontalOptions="CenterAndExpand"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           FontSize="25">
+                    </Label>
+
+                    <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="5,0,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ReturnToArtistPageCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                   
+                    <Image Source="{Binding ArtistInfo.PictureXL}" Grid.Row="2" Grid.ColumnSpan="4"/>
+
+                    <Label Grid.Row="3"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Number of fans" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black"/>
+
+                    <Label Grid.Row="4"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding ArtistInfo.NumberOfFans}">
+                    </Label>
+
+                    <Label Grid.Row="5"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Number of albums" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black">
+                    </Label>
+
+                    <Label Grid.Row="6"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding ArtistInfo.NumberOfAlbums}">
+                    </Label>
+
+                    <Label Grid.Row="7"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Artist's tracklist" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black">
+                    </Label>
+
+                    <Label x:Name="tracklistLink"
+                           Grid.Row="8"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding ArtistInfo.Tracklist}">
+                        
+                    </Label>
+
+                    <Label Grid.Row="9"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Artist's Deezer link" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black">
+                    </Label>
+
+                    <Label Grid.Row="10"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding ArtistInfo.Link}">
+
+                    </Label>
+
+                </Grid>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

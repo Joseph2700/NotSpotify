@@ -10,50 +10,48 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                
-               <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
 
+                    </Grid.ColumnDefinitions>
 
-                <Frame Grid.Row="0"
-                   Grid.ColumnSpan="4"
-                   BackgroundColor ="#F44336">
-                </Frame>
+                    <Frame Grid.Row="0"
+                       Grid.ColumnSpan="4"
+                       BackgroundColor ="#F44336">
 
-                <Label Text="Artists"
-                       Grid.Row="0"
-                       Grid.Column="1"
-                       Grid.ColumnSpan="3"
-                       VerticalOptions="Center"
-                       Margin="70,0,0,0"
-                       FontAttributes="Bold"
-                       FontSize="25"
-                       TextColor="White">
-                </Label>
+                        <Label Text="Artists"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="3"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           TextColor="White">
+                        </Label>
+                    </Frame>
 
-                <local:RoundedEntry Grid.Row="2"
+                    <local:RoundedEntry Grid.Row="2"
                                     Grid.Column="0"
                                     Grid.ColumnSpan="3"
                                     VerticalOptions="StartAndExpand"
                                     Text="{Binding Id}"
                                     Margin="10,0,0,0"
                                     Placeholder="Insert the artist's ID here">
-                </local:RoundedEntry>
+                    </local:RoundedEntry>
 
-                <Button Text="Search" 
+                    <Button Text="Search" 
                         TextColor="White"
                         Grid.Row="2"
                         Grid.Column="3"
@@ -62,36 +60,46 @@
                         Margin="0,0,10,0"
                         CornerRadius="20"
                         BackgroundColor="#448AFF">
-                </Button>
+                    </Button>
+                </Grid>
 
-                
-                    <!--<CollectionView ItemsSource="{Binding ModelArtists}"
-                                SelectionMode="Single"
-                                SelectedItem="{Binding SelectedArtist,Mode=TwoWay}"
-                            Grid.Row="5">
+                <CollectionView ItemsSource="{Binding ModelArtists}"
+                                    SelectionMode="Single"
+                                    SelectedItem="{Binding SelectedArtist,Mode=TwoWay}"   
+                                    Grid.Row="5">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2"/>
+                    </CollectionView.ItemsLayout>
 
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="20" Margin="12">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
 
-                        <CollectionView.ItemsLayout>
-                            <GridItemsLayout Orientation="Vertical"
-                                             Span="2">
-                            </GridItemsLayout>
+                                <Image Source="{Binding Picture}"
+                                       Grid.Row="0"
+                                       WidthRequest="100"
+                                       HeightRequest="150"/>
 
-                        </CollectionView.ItemsLayout>
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout>
-                                    <Image Source="{Binding Picture}" WidthRequest="100" Grid.ColumnSpan="3"/>
+                                <StackLayout Grid.Row="1">
+
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Name}"
+                                           TextColor="Black"
+                                           TextDecorations="Underline"
+                                           FontAttributes="Bold"
+                                           FontSize="20"
+                                           VerticalOptions="Center"/>
                                 </StackLayout>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-
-                    </CollectionView>-->
-             
-
-                   </Grid>
-
-
+                                
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
         </ScrollView>
-
     </ContentPage.Content>
 </ContentPage> 

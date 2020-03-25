@@ -49,11 +49,14 @@ namespace NotSpotifyApp.ViewModels
 
         public void LoadModelArtists()
         {
-            ModelArtists.Add(new Artist() { Picture = "BillieEilish.jpg" });
-            ModelArtists.Add(new Artist() { Picture = "JheneAiko.jpg" });
-            ModelArtists.Add(new Artist() { Picture = "LilUziVert.jpg" });
-            ModelArtists.Add(new Artist() { Picture = "LilBabyjpg" });
-            ModelArtists.Add(new Artist() { Picture = "BadBunny.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Billie Eilish", Picture = "BillieEilish.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Jhené Aiko", Picture = "JheneAiko.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Lil Uzi Vert", Picture = "LilUziVert.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Lil Baby", Picture = "LilBaby.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Bad Bunny", Picture = "BadBunny.jpg" });
+            ModelArtists.Add(new Artist() { Name = "NCT 127", Picture = "NCT127.jpg" });
+            ModelArtists.Add(new Artist() { Name = "BTS", Picture = "BTS.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Post Malone", Picture = "PostMalone.jpg" });
         }
 
         

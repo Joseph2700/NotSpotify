@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NotSpotifyApp.ViewModels
 {
@@ -15,6 +16,8 @@ namespace NotSpotifyApp.ViewModels
     {
         public Artist ArtistInfo { get; set; }
         public DelegateCommand GetArtistInfoCommand { get; set; }
+        public DelegateCommand ReturnToArtistPageCommand { get; set; }
+        public DelegateCommand GoToTracklistLinkCommand { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         public string Id { get; set; }
 
@@ -26,8 +29,12 @@ namespace NotSpotifyApp.ViewModels
                 await GetArtistData();
             });
 
-         
-        }
+            ReturnToArtistPageCommand = new DelegateCommand(async () =>
+            {
+                await navigationService.GoBackAsync();
+            });
+
+        }     
 
         public void Initialize(INavigationParameters parameters)
         {

@@ -19,14 +19,15 @@ namespace NotSpotifyApp
         {
             InitializeComponent();
 
-           NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
-
+            //NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<OptionsTabbedPage>();
+            containerRegistry.RegisterForNavigation<AccessPage,AccessPageViewModel>();
             containerRegistry.RegisterForNavigation<ArtistPage, ArtistPageViewModel>();
             containerRegistry.RegisterForNavigation<ArtistInfoPage, ArtistInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<AlbumPage, AlbumPageViewModel>();

@@ -1,14 +1,13 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
 using Xamarin.Forms;
+using Plugin.Fingerprint;
+using Plugin.CurrentActivity;
 
 namespace NotSpotifyApp.Droid
 {
@@ -17,6 +16,7 @@ namespace NotSpotifyApp.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
