@@ -38,7 +38,17 @@
                            FontSize="20"
                            TextColor="White">
                         </Label>
+                       
                     </Frame>
+
+                    <ImageButton Source="ic_favorite"
+                                 Grid.Row="0"
+                                 Grid.Column="3"
+                                 HorizontalOptions="End"
+                                 Margin="0,0,20,0"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="40">
+                    </ImageButton>
 
                     <local:RoundedEntry Grid.Row="2"
                                     Grid.Column="0"
