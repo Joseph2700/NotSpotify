@@ -8,5 +8,6 @@ namespace NotSpotifyApp.Services
         Task<Artist> GetArtistInfo(string Id);
         Task<Genre> GetGenreInfo(string Id);
         Task<Album> GetAlbumInfo(string Id);
+        Task<Track> GetTrackInfo(string Id);
     }
 }

@@ -60,5 +60,22 @@ namespace NotSpotifyApp.Services
 			}
 			return default;
 		}
+
+		public async Task<Track> GetTrackInfo(string Id)
+		{
+			try
+			{
+				HttpClient trackClient = new HttpClient();
+				trackClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiHost}", $"{ApiConfig.ApiHostValue}");
+				trackClient.DefaultRequestHeaders.Add($"{ApiConfig.ApiKey}", $"{ApiConfig.ApiKeyValue}");
+				var result = await trackClient.GetStringAsync($"{ApiConfig.TrackUrl}{Id}");
+				return JsonConvert.DeserializeObject<Track>(result);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"API EXCEPTION {ex}");
+			}
+			return default;
+		}
 	}
 }
