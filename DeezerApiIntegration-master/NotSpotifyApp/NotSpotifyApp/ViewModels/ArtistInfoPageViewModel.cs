@@ -17,11 +17,9 @@ namespace NotSpotifyApp.ViewModels
         public Artist ArtistInfo { get; set; }
         public DelegateCommand GetArtistInfoCommand { get; set; }
         public DelegateCommand ReturnToArtistPageCommand { get; set; }
-        public DelegateCommand GoToTracklistLinkCommand { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         public string Id { get; set; }
 
-        
         public ArtistInfoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeezerApiService apiService) : base(navigationService, apiService)
         {
             GetArtistInfoCommand = new DelegateCommand(async () =>

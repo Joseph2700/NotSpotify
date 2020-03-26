@@ -8,8 +8,7 @@
              x:Class="NotSpotifyApp.Views.ArtistInfoPage">
     <ContentPage.Content>
         <ScrollView>
-            
-                <Grid>
+            <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>

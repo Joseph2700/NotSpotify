@@ -3,68 +3,111 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:NotSpotifyApp.Controls"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
              x:Class="NotSpotifyApp.Views.AlbumPage">
     <ContentPage.Content>
-
         <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-            <StackLayout Margin="30">
-                <Label Text="Insert album ID"
-                       HorizontalOptions="Center"
-                       Style="{StaticResource Title}"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Entry Keyboard="Numeric"
-                       Placeholder="Enter the album's Deezer ID here"
-                       HorizontalOptions="FillAndExpand"
-                       Text="{Binding Id}"
-                       TextColor="Black"
-                       Margin="5"/>
+                    <Frame Grid.Row="0"
+                       Grid.ColumnSpan="4"
+                       BackgroundColor ="#448AFF">
 
-                <Button Text="Show album info"
-                        Command="{Binding GetAlbumInfoCommand}"
-                        BorderColor="AliceBlue" 
-                        BackgroundColor="CadetBlue" 
-                        FontAttributes="Bold" 
-                        CornerRadius="50" 
-                          HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="Albums"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="3"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           TextColor="White">
+                        </Label>
+                    </Frame>
 
-                <Image Source="{Binding AlbumInfo.CoverXl}"/>
+                    <local:RoundedEntry Grid.Row="2"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    VerticalOptions="StartAndExpand"
+                                    Text="{Binding Id}"
+                                    Margin="10,0,0,0"
+                                    Keyboard="Numeric"
+                                    Placeholder="Insert the album's ID here">
+                    </local:RoundedEntry>
 
-                <Label TextColor="DarkGoldenrod"
-                       FontAttributes="Bold"
-                       FontSize="30" 
-                       HorizontalOptions="CenterAndExpand" 
-                       Text="{Binding AlbumInfo.Title} "/>
+                    <Button Text="Search" 
+                        TextColor="White"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        FontAttributes="Bold"
+                        Command="{Binding SearchAlbumCommand}"
+                        Margin="0,0,10,0"
+                        CornerRadius="20"
+                        BackgroundColor="#F44336">
+                    </Button>
+                </Grid>
 
-                <Label Style="{StaticResource InfoLabel}"
-                       Text="Release date: "/>
+                <CollectionView ItemsSource="{Binding ModelAlbums}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" Margin="12">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
 
-                <Label Style="{StaticResource Information}"
-                    Text="{Binding AlbumInfo.ReleaseDate}"/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
 
-                <Label Style="{StaticResource InfoLabel}"
-                       Text="Fans: "/>
+                                <Image Source="{Binding CoverXl}"
+                                       Grid.RowSpan="2"
+                                       Aspect="AspectFill"
+                                       WidthRequest="150"
+                                       HeightRequest="200">
+                                </Image>
 
-                <Label Style="{StaticResource Information}"
-                    Text="{Binding AlbumInfo.Fans}"/>
+                                <Label Grid.Column="1"
+                                       VerticalOptions="Center"
+                                       FontAttributes="Bold"
+                                       FontSize="20"
+                                       TextColor="Black"
+                                       Text="{Binding Title}">
+                                </Label>
 
-                <Label Style="{StaticResource InfoLabel}"
-                       Text="Number of tracks: "/>
-
-                <Label Style="{StaticResource Information}"
-                    Text="{Binding AlbumInfo.NumberOfTracks}"/>
-
-                <Label Style="{StaticResource InfoLabel}"
-                       Text="Tracklist:  "/>
-
-                <Label Style="{StaticResource Information}"
-                       Text="{Binding AlbumInfo.Tracklist}"/>
-                
-                
+                                <Label  Grid.Row="1"
+                                        Grid.Column="1"
+                                        VerticalOptions="Start"
+                                        FontAttributes="Italic"
+                                        FontSize="18"
+                                        TextColor="Black"
+                                        Text="{Binding ReleaseDate}">
+                                </Label>
+                                       
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
-
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="WBackgroundPicture.jpg"
+             x:Class="NotSpotifyApp.Views.AlbumInfoPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White">
+
+                    <Label 
+                       Text="{Binding AlbumInfo.Title}"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       FontSize="20">
+                    </Label>
+                </Frame>
+
+                <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="5,0,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReturnToAlbumPageCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <ImageButton Source="ic_favorite"
+                                 Grid.Row="0"
+                                 Grid.Column="3"
+                                 HorizontalOptions="Center"
+                                 Margin="0,0,30,0"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="40">
+                    </ImageButton>
+
+                <ImageButton Source="ic_share"
+                                 Grid.Row="0"
+                                 Grid.Column="3"
+                                 HorizontalOptions="End"
+                                 Margin="0,0,5,0"
+                                 Command="{Binding ShareAlbumCommand}"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="40">
+                </ImageButton>
+
+                <Image Source="{Binding AlbumInfo.CoverXl}" Grid.Row="2" Grid.ColumnSpan="4"/>
+
+                <Label Grid.Row="3"
+                       Grid.ColumnSpan="4"
+                       Margin="15,0,0,0"
+                       Text="{Binding AlbumInfo.Title}"
+                       HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       FontSize="28">
+                </Label>
+
+                <Label Grid.Row="4"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Release date" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black"/>
+
+                <Label Grid.Row="5"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding AlbumInfo.ReleaseDate}">
+                </Label>
+
+                <Label Grid.Row="6"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Number of tracks" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black">
+                </Label>
+
+                <Label Grid.Row="7"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding AlbumInfo.NumberOfTracks}">
+                </Label>
+
+                <Label Grid.Row="8"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Fans:" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black">
+                </Label>
+
+                <Label  Grid.Row="9"
+                        Grid.ColumnSpan="4"
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="Black"
+                        FontAttributes="Italic"
+                        FontSize="18"
+                        Text="{Binding AlbumInfo.Fans}">
+
+                </Label>
+
+                <Label Grid.Row="10"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Label" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black">
+                </Label>
+
+                <Label Grid.Row="11"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding AlbumInfo.Label}">
+
+                </Label>
+
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

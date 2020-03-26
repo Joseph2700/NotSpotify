@@ -19,8 +19,8 @@ namespace NotSpotifyApp
         {
             InitializeComponent();
 
-            //NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
-            NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
+            //NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -31,6 +31,7 @@ namespace NotSpotifyApp
             containerRegistry.RegisterForNavigation<ArtistPage, ArtistPageViewModel>();
             containerRegistry.RegisterForNavigation<ArtistInfoPage, ArtistInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<AlbumPage, AlbumPageViewModel>();
+            containerRegistry.RegisterForNavigation<AlbumInfoPage, AlbumInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<GenrePage, GenrePageViewModel>();
             containerRegistry.Register<IDeezerApiService, DeezerApiService>();
         }

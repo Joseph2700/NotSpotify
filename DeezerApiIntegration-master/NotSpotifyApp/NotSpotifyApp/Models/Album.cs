@@ -11,8 +11,8 @@ namespace NotSpotifyApp.Models
         [JsonProperty("title")]
         public string Title { get; set; }
 
-        [JsonProperty("link")]
-        public string Link { get; set; }
+        [JsonProperty("share")]
+        public string SharingLink { get; set; }
 
         [JsonProperty("cover")]
         public string Cover { get; set; }
@@ -31,6 +31,9 @@ namespace NotSpotifyApp.Models
 
         [JsonProperty("release_date")]
         public string ReleaseDate { get; set; }
+
+        [JsonProperty("label")]
+        public string Label { get; set; }
 
         [JsonProperty("tracklist")]
         public string Tracklist { get; set; }
