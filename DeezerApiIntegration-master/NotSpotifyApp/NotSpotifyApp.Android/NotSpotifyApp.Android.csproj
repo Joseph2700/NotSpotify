@@ -167,6 +167,7 @@
     <AndroidResource Include="Resources\drawable\ic_next.png" />
     <AndroidResource Include="Resources\drawable\ic_play.png" />
     <AndroidResource Include="Resources\drawable\ic_back.png" />
+    <AndroidResource Include="Resources\drawable\ic_music.png" />
     <Content Include="Resources\mipmap-hdpi\AppIcon.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />

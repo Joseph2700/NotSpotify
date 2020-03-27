@@ -3,13 +3,70 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:NotSpotifyApp.Controls"
              mc:Ignorable="d"
              x:Class="NotSpotifyApp.Views.TrackPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0"
+                       Grid.ColumnSpan="4"
+                       BackgroundColor ="#F44336">
+
+                    <Label Text="Albums"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="3"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           TextColor="White">
+                    </Label>
+
+                </Frame>
+
+                <ImageButton Source="ic_favorite"
+                                 Grid.Row="0"
+                                 Grid.Column="3"
+                                 HorizontalOptions="End"
+                                 Margin="0,0,20,0"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="40">
+                </ImageButton>
+
+                <local:RoundedEntry Grid.Row="2"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    VerticalOptions="StartAndExpand"                                   
+                                    Margin="10,0,0,0"
+                                    Keyboard="Numeric"
+                                    Placeholder="Insert the track's ID here">
+                </local:RoundedEntry>
+
+                <Button Text="Search" 
+                        TextColor="White"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        FontAttributes="Bold"                        
+                        Margin="0,0,10,0"
+                        CornerRadius="20"
+                        BackgroundColor="#F44336">
+                </Button>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
