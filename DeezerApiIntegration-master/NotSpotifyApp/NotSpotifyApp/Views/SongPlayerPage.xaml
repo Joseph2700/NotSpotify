@@ -44,37 +44,35 @@
 
         <StackLayout Orientation="Horizontal"
                      HorizontalOptions="CenterAndExpand">
-        
-        <ImageButton Source="ic_favorite"
+
+            <ImageButton Source="ic_favorite"
                      HeightRequest="40"
                      BackgroundColor="Transparent"
                      Margin="0,0,40,0">
-        </ImageButton>
+            </ImageButton>
 
-        <ImageButton Source="ic_back"
+            <ImageButton Source="ic_back"
                      HeightRequest="60"
                      BackgroundColor="Transparent">
-        </ImageButton>
+            </ImageButton>
 
-        <ImageButton Source="ic_play"
+            <ImageButton Source="ic_play"
                      HeightRequest="60"
                      BackgroundColor="Transparent">
-        </ImageButton>
+            </ImageButton>
 
-        <ImageButton Source="ic_next"
+            <ImageButton Source="ic_next"
                      HeightRequest="60"
                      BackgroundColor="Transparent">
-        </ImageButton>
+            </ImageButton>
 
-        <ImageButton Source="ic_share"
+            <ImageButton Source="ic_share"
                      HeightRequest="40"
                      Margin="40,0,0,0"
                      Command="{Binding ShareTrackCommand}"
                      BackgroundColor="Transparent">
-        </ImageButton>
+            </ImageButton>
 
         </StackLayout>
-
     </StackLayout>
-    
 </ContentPage>
