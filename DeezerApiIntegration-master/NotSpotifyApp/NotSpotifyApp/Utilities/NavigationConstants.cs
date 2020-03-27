@@ -14,5 +14,6 @@ namespace NotSpotifyApp.Utilities
         public const string AccessPage = "/AccessPage";
         public const string TrackPage = "TrackPage";
         public const string GenrePage = "GenrePage";
+        public const string SongPlayerPage = "SongPlayerPage";
     }
 }
