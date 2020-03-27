@@ -164,6 +164,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_favorite.png" />
     <AndroidResource Include="Resources\drawable\ic_share.png" />
+    <AndroidResource Include="Resources\drawable\ic_next.png" />
+    <AndroidResource Include="Resources\drawable\ic_play.png" />
+    <AndroidResource Include="Resources\drawable\ic_back.png" />
     <Content Include="Resources\mipmap-hdpi\AppIcon.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />

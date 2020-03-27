@@ -29,45 +29,47 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336">
-
-                    <Label 
-                       Text="Song name"
-                       HorizontalOptions="Center"
-                       FontAttributes="Bold"
-                       TextColor="White"
-                       FontSize="20">
-                    </Label>
-                </Frame>
-
-                <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="5,0,0,0">
+                <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="10">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding }"/>
+                        <TapGestureRecognizer Command="{Binding PreviousPageCommand}"/>
                     </Image.GestureRecognizers>
                 </Image>
 
+                <Image Source="{Binding TrackInfo.Album.CoverXl}" Grid.Row="1" Grid.ColumnSpan="4"/>
+
+                <Label Text="{Binding TrackInfo.Title}" Grid.Row="2" Grid.Column="1" Style="{StaticResource Title}" Padding="5"/>
+                <Label Text="{Binding TrackInfo.Artist}" Grid.Row="3" Grid.Column="1" Style="{StaticResource Information}" Padding="5"/>
+
                 <ImageButton Source="ic_favorite"
-                                 Grid.Row="0"
+                                 Grid.Row="5"
+                                 Grid.Column="0"
+                                 BackgroundColor="Transparent">
+                </ImageButton>
+
+                <ImageButton Source="ic_back"
+                                 Grid.Row="5"
+                                 Grid.Column="1"
+                                 BackgroundColor="Transparent">
+                </ImageButton>
+
+                <ImageButton Source="ic_play"
+                                 Grid.Row="5"
+                                 Grid.Column="2"
+                                 BackgroundColor="Transparent">
+                </ImageButton>
+
+                <ImageButton Source="ic_next"
+                                 Grid.Row="5"
                                  Grid.Column="3"
-                                 HorizontalOptions="Center"
-                                 Margin="0,0,40,0"
-                                 BackgroundColor="Transparent"
-                                 HeightRequest="40">
+                                 BackgroundColor="Transparent">
                 </ImageButton>
 
                 <ImageButton Source="ic_share"
-                                 Grid.Row="0"
-                                 Grid.Column="3"
-                                 HorizontalOptions="End"
-                                 Margin="0,0,5,0"
-                                 Command=""
-                                 BackgroundColor="Transparent"
-                                 HeightRequest="40">
+                                 Grid.Row="5"
+                                 Grid.Column="4"
+                                 Command="{Binding ShareTrackCommand}"
+                                 BackgroundColor="Transparent">
                 </ImageButton>
-
-                <Image Source="ic_favorite" Grid.Row="2" Grid.ColumnSpan="4"/>
-                
-                
 
             </Grid>
 
