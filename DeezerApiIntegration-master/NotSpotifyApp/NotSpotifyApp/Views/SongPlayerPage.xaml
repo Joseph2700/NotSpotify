@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,50 +7,74 @@
              x:Class="NotSpotifyApp.Views.SongPlayerPage">
     <StackLayout>
         <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
 
-        <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="10">
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding PreviousPageCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
+            <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="10">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PreviousPageCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
 
-        <Image Source="YHLQMDLG" Grid.Row="1" Grid.ColumnSpan="5"/>
+            <Image Source="YHLQMDLG" Grid.Row="1" Grid.ColumnSpan="5"/>
 
-        <Label Text="P FKN R" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,20,0,0" Style="{StaticResource Title}"/>
-        <Label Text="Bad Bunny" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,0,20" Style="{StaticResource Information}"/>
+            <Label Text="P FKN R" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,20,0,0" Style="{StaticResource Title}"/>
+            <Label Text="Bad Bunny" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,0,20" Style="{StaticResource Information}"/>
 
-        <Label Text="HERE GOES MUSIC THE PLAYER" Grid.Row="4" Grid.ColumnSpan="5" Margin="20" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="HERE GOES MUSIC THE PLAYER" Grid.Row="4" Grid.ColumnSpan="5" Margin="20" HorizontalOptions="CenterAndExpand"/>
         </Grid>
 
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand">
+        
         <ImageButton Source="ic_favorite"
+                     HeightRequest="40"
+                     BackgroundColor="Transparent"
+                     Margin="0,0,40,0">
+        </ImageButton>
+
+        <ImageButton Source="ic_back"
+                     HeightRequest="60"
+                     BackgroundColor="Transparent">
+        </ImageButton>
+
+        <ImageButton Source="ic_play"
+                     HeightRequest="60"
+                     BackgroundColor="Transparent">
+        </ImageButton>
+
+        <ImageButton Source="ic_next"
+                     HeightRequest="60"
                      BackgroundColor="Transparent">
         </ImageButton>
 
         <ImageButton Source="ic_share"
+                     HeightRequest="40"
+                     Margin="40,0,0,0"
                      Command="{Binding ShareTrackCommand}"
                      BackgroundColor="Transparent">
         </ImageButton>
 
+        </StackLayout>
+
     </StackLayout>
     
-</ContentView>
+</ContentPage>
