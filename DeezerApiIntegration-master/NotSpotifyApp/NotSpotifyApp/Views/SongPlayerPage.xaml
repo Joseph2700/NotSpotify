@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="NotSpotifyApp.Views.SongPlayerPage">
-    <StackLayout>
+    <StackLayout
+        BackgroundColor="Crimson">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -34,12 +35,12 @@
                 </Image.GestureRecognizers>
             </Image>
 
-            <Image Source="YHLQMDLG" Grid.Row="1" Grid.ColumnSpan="5"/>
+            <Image Source="{Binding TrackInfo.Album.CoverXl}" Grid.Row="1" Grid.ColumnSpan="5"/>
 
-            <Label Text="P FKN R" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,20,0,0" Style="{StaticResource Title}"/>
-            <Label Text="Bad Bunny" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,0,20" Style="{StaticResource Information}"/>
+            <Label Text="{Binding TrackInfo.Title}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,20,0,0" Style="{StaticResource Title}"/>
+            <Label Text="{Binding TrackInfo.Artist.Name}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,0,20" Style="{StaticResource Information}"/>
 
-            <Label Text="HERE GOES MUSIC THE PLAYER" Grid.Row="4" Grid.ColumnSpan="5" Margin="20" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="HERE GOES MUSIC THE PLAYER" FontAttributes="Bold" Grid.Row="4" Grid.ColumnSpan="5" Margin="20" HorizontalOptions="CenterAndExpand"/>
         </Grid>
 
         <StackLayout Orientation="Horizontal"
@@ -47,21 +48,25 @@
 
             <ImageButton Source="ic_favorite"
                      HeightRequest="40"
+                     Command="{Binding AddToFavoritesCommand}"
                      BackgroundColor="Transparent"
                      Margin="0,0,40,0">
             </ImageButton>
 
             <ImageButton Source="ic_back"
+                         Command="{Binding PreviusTrackCommand}"
                      HeightRequest="60"
                      BackgroundColor="Transparent">
             </ImageButton>
 
             <ImageButton Source="ic_play"
+                         Command="{Binding PlayPauseCommand}"
                      HeightRequest="60"
                      BackgroundColor="Transparent">
             </ImageButton>
 
             <ImageButton Source="ic_next"
+                         Command="{Binding NextTrackCommand}"
                      HeightRequest="60"
                      BackgroundColor="Transparent">
             </ImageButton>
