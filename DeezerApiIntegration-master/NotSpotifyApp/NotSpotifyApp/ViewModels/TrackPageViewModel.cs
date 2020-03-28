@@ -44,7 +44,7 @@ namespace NotSpotifyApp.ViewModels
         }
         public void LoadModelTracks()
         {
-            ModelTracks.Add(new Track() { Title = "The Box - Roddy Rich" });
+            ModelTracks.Add(new Track() { Title = "The Box - Roddy Rich"});
             ModelTracks.Add(new Track() { Title = "Don't Start Now - Dua Lipa" });            
             ModelTracks.Add(new Track() { Title = "Life is Good - Future ft Drake" });
             ModelTracks.Add(new Track() { Title = "Blinding Lights - The Weeknd" });

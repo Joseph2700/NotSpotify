@@ -28,7 +28,7 @@
                        Grid.ColumnSpan="4"
                        BackgroundColor ="#F44336">
 
-                    <Label Text="Albums"
+                    <Label Text="Tracks"
                            Grid.Row="0"
                            Grid.ColumnSpan="3"
                            VerticalOptions="Center"
@@ -67,6 +67,32 @@
                         BackgroundColor="#F44336">
                 </Button>
             </Grid>
+            <CollectionView ItemsSource="{Binding ModelTracks}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" Margin="12">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="1"
+                                       VerticalOptions="Center"
+                                       FontAttributes="Bold"
+                                       FontSize="20"
+                                       TextColor="Black"
+                                       Text="{Binding Title}">
+                            </Label>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
