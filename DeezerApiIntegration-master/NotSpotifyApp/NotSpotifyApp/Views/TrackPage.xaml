@@ -64,7 +64,7 @@
                         FontAttributes="Bold"                        
                         Margin="0,0,10,0"
                         CornerRadius="20"
-                        BackgroundColor="#F44336">
+                        BackgroundColor="#448AFF">
                 </Button>
             </Grid>
             <CollectionView ItemsSource="{Binding ModelTracks}">
