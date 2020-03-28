@@ -13,13 +13,12 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
-	public class SongPlayerPageViewModel : BaseViewModel, IInitialize, INotifyPropertyChanged
+	public class SongPlayerPageViewModel : BaseViewModel, IInitialize
 	{
 		public Track TrackInfo { get; set; }
 		public DelegateCommand GetTrackInfoCommand { get; set; }
 		public DelegateCommand PreviousPageCommand { get; set; }
 		public DelegateCommand ShareTrackCommand { get; set; }
-		public event PropertyChangedEventHandler PropertyChanged;
 		public string Id { get; set; }
 
 		public SongPlayerPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)

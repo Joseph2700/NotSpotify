@@ -15,9 +15,8 @@ using Xamarin.Essentials;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class ArtistPageViewModel : BaseViewModel, INotifyPropertyChanged
+    public class ArtistPageViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         private readonly INavigationService _navigationService;
         public ObservableCollection<Artist> ModelArtists { get; set; } = new ObservableCollection<Artist>();
         public DelegateCommand SearchArtistCommand { get; set; }

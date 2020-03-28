@@ -10,13 +10,12 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class AlbumInfoPageViewModel : BaseViewModel,IInitialize, INotifyPropertyChanged
+    public class AlbumInfoPageViewModel : BaseViewModel,IInitialize
     {
         public Album AlbumInfo { get; set; }
         public DelegateCommand GetAlbumInfoCommand { get; set; }
         public DelegateCommand ReturnToAlbumPageCommand { get; set; }
         public DelegateCommand ShareAlbumCommand { get; set; }
-        public event PropertyChangedEventHandler PropertyChanged;
         public string Id { get; set; }
 
         public AlbumInfoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)

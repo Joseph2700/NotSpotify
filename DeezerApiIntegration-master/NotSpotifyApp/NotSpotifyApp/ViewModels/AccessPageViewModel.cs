@@ -7,6 +7,7 @@ using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
@@ -20,10 +21,10 @@ namespace NotSpotifyApp.ViewModels
 
             FingerprintCommand = new DelegateCommand(async() =>
             {
-                FingerprintMethod();
+                await FingerprintMethod();
             });
 
-             async void FingerprintMethod()
+             async Task FingerprintMethod()
             {
                 var result = await CrossFingerprint.Current.AuthenticateAsync("Use your fingerprint to access NotSpotifyApp!");
                 if (result.Authenticated)

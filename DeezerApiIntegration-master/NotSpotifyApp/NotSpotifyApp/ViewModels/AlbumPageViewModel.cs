@@ -15,9 +15,8 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 	{
-		public class AlbumPageViewModel : BaseViewModel, INotifyPropertyChanged
+		public class AlbumPageViewModel : BaseViewModel
 		{
-			public event PropertyChangedEventHandler PropertyChanged;
 		    private readonly INavigationService _navigationService;
 		    public ObservableCollection<Album> ModelAlbums { get; set; } = new ObservableCollection<Album>();
 			public DelegateCommand SearchAlbumCommand { get; set; }

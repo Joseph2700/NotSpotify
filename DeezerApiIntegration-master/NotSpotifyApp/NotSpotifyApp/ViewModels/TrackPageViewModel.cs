@@ -13,9 +13,8 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class TrackPageViewModel : BaseViewModel, INotifyPropertyChanged
+    public class TrackPageViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         private readonly INavigationService _navigationService;
         public ObservableCollection<Track> ModelTracks { get; set; } = new ObservableCollection<Track>();
         public DelegateCommand SearchTrackCommand { get; set; }
