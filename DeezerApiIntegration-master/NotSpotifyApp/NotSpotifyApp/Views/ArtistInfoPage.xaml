@@ -29,7 +29,7 @@
                         <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White"/>
+                    <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White" HeightRequest="10"/>
 
                     <Label Grid.Row="0"
                            Grid.ColumnSpan="4"
@@ -40,13 +40,24 @@
                            FontSize="25">
                     </Label>
 
-                    <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="5,0,0,0">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ReturnToArtistPageCommand}"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                   
-                    <Image Source="{Binding ArtistInfo.PictureXL}" Grid.Row="2" Grid.ColumnSpan="4"/>
+                <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="5,0,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReturnToArtistPageCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <ImageButton Source="ic_share"
+                                     Grid.Row="0"
+                                     Grid.Column="3"
+                                     HorizontalOptions="End"
+                                     Margin="0,0,5,0"
+                                     Command="{Binding ShareArtistCommand}"
+                                     BackgroundColor="Transparent"
+                                     HeightRequest="35">
+                </ImageButton>
+
+
+                <Image Source="{Binding ArtistInfo.PictureXL}" Grid.Row="2" Grid.ColumnSpan="4"/>
 
                     <Label Grid.Row="3"
                            Grid.ColumnSpan="4"

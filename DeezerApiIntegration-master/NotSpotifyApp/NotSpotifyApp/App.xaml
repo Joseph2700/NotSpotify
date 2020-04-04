@@ -16,6 +16,11 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
+            <OnPlatform x:TypeArguments="x:String" x:Key="BoldTitleStyle">
+                <On Platform="Android" Value="Raleway-Bold.ttf#Raleway" />
+                <On Platform="iOS" Value="Raleway-Bold" />
+            </OnPlatform>
+
             <Style x:Key="Information" TargetType="Label">
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="FontAttributes" Value="Bold"/>

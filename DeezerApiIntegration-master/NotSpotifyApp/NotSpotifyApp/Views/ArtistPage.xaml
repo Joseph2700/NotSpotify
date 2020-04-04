@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:NotSpotifyApp.Controls"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="BackgroundPicture.jpg"
              x:Class="NotSpotifyApp.Views.ArtistPage">
     
     <ContentPage.Content>
@@ -21,10 +22,10 @@
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
 
                     </Grid.ColumnDefinitions>
 
@@ -54,6 +55,7 @@
 
                     <Button Text="Search" 
                         TextColor="White"
+                        FontSize="12"
                         Grid.Row="2"
                         Grid.Column="3"
                         FontAttributes="Bold"

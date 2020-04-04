@@ -19,8 +19,13 @@ namespace NotSpotifyApp
         {
             InitializeComponent();
 
+<<<<<<< Updated upstream
               NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
               //NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
+=======
+            //NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
+>>>>>>> Stashed changes
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

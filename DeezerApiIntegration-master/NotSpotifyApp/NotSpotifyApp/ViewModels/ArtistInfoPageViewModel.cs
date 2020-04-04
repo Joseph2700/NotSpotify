@@ -1,5 +1,7 @@
 ﻿using NotSpotifyApp.Models;
 using NotSpotifyApp.Services;
+using Plugin.Share;
+using Plugin.Share.Abstractions;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -16,6 +18,7 @@ namespace NotSpotifyApp.ViewModels
     {
         public Artist ArtistInfo { get; set; }
         public DelegateCommand GetArtistInfoCommand { get; set; }
+        public DelegateCommand ShareArtistCommand { get; set; }
         public DelegateCommand ReturnToArtistPageCommand { get; set; }
         public string Id { get; set; }
 
@@ -29,6 +32,15 @@ namespace NotSpotifyApp.ViewModels
             ReturnToArtistPageCommand = new DelegateCommand(async () =>
             {
                 await navigationService.GoBackAsync();
+            });
+
+            ShareArtistCommand = new DelegateCommand(async () =>
+            {
+                await CrossShare.Current.Share(new ShareMessage
+                {
+                    Title = $"Hey check this artist out! - {ArtistInfo.Name}",
+                    Url = $"{ArtistInfo.Link}"
+                });
             });
 
         }     

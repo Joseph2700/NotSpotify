@@ -3,55 +3,121 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:custom="clr-namespace:NotSpotifyApp.Controls"
              mc:Ignorable="d"
+             BackgroundImageSource="BackgroundPicture.jpg"
              x:Class="NotSpotifyApp.Views.HomePage">
     <ContentPage.Content>
-
         <StackLayout>
 
-            <Label Text="Top artists" FontSize="20" FontAttributes="Bold" Margin="165,0,0,0"/>
-            <CarouselView ItemsSource="{Binding Artists}" PeekAreaInsets="320" BackgroundColor="#F44336">
+            <Label Margin="20"
+                   FontSize="25"              
+                   Text="Top artists"       
+                   TextColor="White"     
+                   HorizontalOptions="Center"
+                   FontFamily="{StaticResource BoldTitleStyle}">
+            </Label>
+
+            <CarouselView Margin="5"
+                          NumberOfSideItems="1"
+                          PeekAreaInsets="100"
+                          ItemsSource="{Binding Artists}">
+
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout  ItemSpacing="10"
+                                    Orientation="Horizontal">
+                    </LinearItemsLayout>
+                </CarouselView.ItemsLayout>
+
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="270" CornerRadius="20" VerticalOptions="CenterAndExpand">
-                                <StackLayout>
-                                    <Image Source="{Binding Picture}"/>
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-            <Label Text="Top albums" FontSize="20" FontAttributes="Bold" Margin="165,0,0,0"/>
-            <CarouselView ItemsSource="{Binding Albums}" PeekAreaInsets="320" BackgroundColor="#448AFF">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="270" CornerRadius="20" VerticalOptions="CenterAndExpand">
-                                <StackLayout>
-                                    <Image Source="{Binding CoverXl}"/>
-                                </StackLayout>
-                            </Frame>
+                            <custom:RoundedImage HeightRequest="125"
+                                                 WidthRequest="30"
+                                                 Source="{Binding Picture}">
+                            </custom:RoundedImage>
+                            <Label Text="{Binding Name}"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center">
+                            </Label>
                         </StackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
 
-            <Label Text="Top tracks" FontSize="20" FontAttributes="Bold" Margin="165,0,0,0"/>
-            <ListView ItemsSource="{Binding Tracks}" BackgroundColor="Wheat">
-                <ListView.ItemTemplate>
+            <Label Margin="20"
+                   FontSize="25"              
+                   Text="Top tracks"       
+                   TextColor="White"     
+                   HorizontalOptions="Center"
+                   FontFamily="{StaticResource BoldTitleStyle}">
+            </Label>
+
+            <CollectionView ItemsSource="{Binding Tracks}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                 Span="2">
+                    </GridItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Rank}" FontSize="20" TextColor="Red" FontAttributes="Bold" Margin="5,0,0,0"/>
-                                <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold"/>
-                            </StackLayout>
-                        </ViewCell>
+                        <StackLayout Padding="5">
+                            <Frame BackgroundColor="DarkSlateGray" CornerRadius="5" Padding="1">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Rank}" 
+                                           TextColor="White"
+                                           HeightRequest="50"
+                                           FontAttributes="Bold"
+                                           Margin="5,0,0,0"/>
+                                    <Label 
+                                           Text="{Binding Title}"    
+                                           TextColor="White"
+                                           FontAttributes="Bold"
+                                           Margin="5,0,0,0">
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Margin="20"
+                   FontSize="25"              
+                   Text="Top albums"       
+                   TextColor="White"     
+                   HorizontalOptions="Center"
+                   FontFamily="{StaticResource BoldTitleStyle}">
+            </Label>
+
+            <CarouselView Margin="5"
+                          NumberOfSideItems="1"
+                          PeekAreaInsets="100"
+                          ItemsSource="{Binding Albums}">
+
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout  ItemSpacing="12"
+                                    Orientation="Horizontal">
+                    </LinearItemsLayout>
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <custom:RoundedImage HeightRequest="125"
+                                                 WidthRequest="30"
+                                                 Source="{Binding CoverXl}">
+                            </custom:RoundedImage>
+                            <Label Text="{Binding Title}"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center">
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>  
