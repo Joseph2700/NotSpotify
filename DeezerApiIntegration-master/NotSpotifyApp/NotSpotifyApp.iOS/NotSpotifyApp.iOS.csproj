@@ -289,4 +289,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_music.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_search.png" />
+  </ItemGroup>
 </Project>

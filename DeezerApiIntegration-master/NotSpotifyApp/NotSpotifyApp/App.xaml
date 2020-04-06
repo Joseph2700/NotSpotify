@@ -16,7 +16,7 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
-            <OnPlatform x:TypeArguments="x:String" x:Key="BoldTitleStyle">
+            <OnPlatform x:TypeArguments="x:String" x:Key="TitleStyle">
                 <On Platform="Android" Value="Raleway-Bold.ttf#Raleway" />
                 <On Platform="iOS" Value="Raleway-Bold" />
             </OnPlatform>

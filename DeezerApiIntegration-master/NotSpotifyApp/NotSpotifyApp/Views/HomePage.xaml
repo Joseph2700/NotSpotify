@@ -15,7 +15,7 @@
                    Text="Top artists"       
                    TextColor="White"     
                    HorizontalOptions="Center"
-                   FontFamily="{StaticResource BoldTitleStyle}">
+                   FontFamily="{StaticResource TitleStyle}">
             </Label>
 
             <CarouselView Margin="5"
@@ -51,7 +51,7 @@
                    Text="Top tracks"       
                    TextColor="White"     
                    HorizontalOptions="Center"
-                   FontFamily="{StaticResource BoldTitleStyle}">
+                   FontFamily="{StaticResource TitleStyle}">
             </Label>
 
             <CollectionView ItemsSource="{Binding Tracks}">
@@ -88,7 +88,7 @@
                    Text="Top albums"       
                    TextColor="White"     
                    HorizontalOptions="Center"
-                   FontFamily="{StaticResource BoldTitleStyle}">
+                   FontFamily="{StaticResource TitleStyle}">
             </Label>
 
             <CarouselView Margin="5"

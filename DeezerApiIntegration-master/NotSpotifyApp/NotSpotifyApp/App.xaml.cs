@@ -7,7 +7,6 @@ using Prism.Ioc;
 using Prism.Unity;
 using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace NotSpotifyApp
 {
@@ -18,14 +17,8 @@ namespace NotSpotifyApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-<<<<<<< Updated upstream
-              NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
-              //NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
-=======
-            //NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
             NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
->>>>>>> Stashed changes
+            
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

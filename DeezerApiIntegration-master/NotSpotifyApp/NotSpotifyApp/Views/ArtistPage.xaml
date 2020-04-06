@@ -6,70 +6,54 @@
              xmlns:local="clr-namespace:NotSpotifyApp.Controls"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
-             BackgroundImageSource="BackgroundPicture.jpg"
+             BackgroundColor="White"
              x:Class="NotSpotifyApp.Views.ArtistPage">
-    
+
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                <Frame BackgroundColor="#F44336">
+                    <Label Grid.Row="0"
+                           FontSize="25"
+                           FontFamily="{StaticResource TitleStyle}"
+                           Text="Search artists"
+                           TextColor="White"
+                           HorizontalOptions="Center">
+                    </Label>
 
-                    </Grid.ColumnDefinitions>
+                </Frame>
 
-                    <Frame Grid.Row="0"
-                       Grid.ColumnSpan="4"
-                       BackgroundColor ="#F44336">
+                <local:RoundedEntry     Grid.Row="2"
+                                        VerticalOptions="StartAndExpand"
+                                        Text="{Binding Id}"
+                                        Margin="30,0,30,0"
+                                        Keyboard="Numeric"
+                                        Placeholder="Insert the artists ID here">
+                </local:RoundedEntry>
 
-                        <Label Text="Artists"
-                           Grid.Row="0"
-                           Grid.ColumnSpan="3"
-                           VerticalOptions="Center"
-                           FontAttributes="Bold"
-                           FontSize="20"
-                           TextColor="White">
-                        </Label>
-                    </Frame>
+                <ImageButton Grid.Row="2"
+                                 Source="ic_search"
+                                 Margin="0,0,45,0"
+                                 HeightRequest="30"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 Command="{Binding SearchArtistCommand}">
 
-                    <local:RoundedEntry Grid.Row="2"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="3"
-                                    VerticalOptions="StartAndExpand"
-                                    Text="{Binding Id}"
-                                    Margin="10,0,0,0"
-                                    Keyboard="Numeric"
-                                    Placeholder="Insert the artist's ID here">
-                    </local:RoundedEntry>
-
-                    <Button Text="Search" 
-                        TextColor="White"
-                        FontSize="12"
-                        Grid.Row="2"
-                        Grid.Column="3"
-                        FontAttributes="Bold"
-                        Command="{Binding SearchArtistCommand}"
-                        Margin="0,0,10,0"
-                        CornerRadius="20"
-                        BackgroundColor="#448AFF">
-                    </Button>
-                </Grid>
+                </ImageButton>
 
                 <CollectionView ItemsSource="{Binding ModelArtists}"
                                     SelectionMode="Single"
                                     SelectedItem="{Binding SelectedArtist,Mode=TwoWay}"   
-                                    Grid.Row="5">
+                                    Grid.Row="3">
+                    
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" Span="2"/>
                     </CollectionView.ItemsLayout>
@@ -87,22 +71,11 @@
                                        WidthRequest="100"
                                        HeightRequest="150"/>
 
-                                <StackLayout Grid.Row="1">
-
-                                    <Label Grid.Column="1"
-                                           Text="{Binding Name}"
-                                           TextColor="Black"
-                                           TextDecorations="Underline"
-                                           FontAttributes="Bold"
-                                           FontSize="20"
-                                           VerticalOptions="Center"/>
-                                </StackLayout>
-                                
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage> 

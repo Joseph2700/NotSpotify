@@ -7,8 +7,7 @@
              mc:Ignorable="d"
              x:Class="NotSpotifyApp.Views.TrackPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid>
+         <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -17,57 +16,45 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
+            <Frame BackgroundColor="#F44336">
+                <Label Grid.Row="0"
+                           FontSize="25"
+                           FontFamily="{StaticResource TitleStyle}"
+                           Text="Search tracks"
+                           TextColor="White"
+                           HorizontalOptions="Center">
+                </Label>
 
-                <Frame Grid.Row="0"
-                       Grid.ColumnSpan="4"
-                       BackgroundColor ="#F44336">
-
-                    <Label Text="Tracks"
-                           Grid.Row="0"
-                           Grid.ColumnSpan="3"
-                           VerticalOptions="Center"
-                           FontAttributes="Bold"
-                           FontSize="20"
-                           TextColor="White">
-                    </Label>
-
-                </Frame>
-
-                <ImageButton Source="ic_favorite"
+            </Frame>
+            <ImageButton Source="ic_favorite"
                                  Grid.Row="0"
-                                 Grid.Column="3"
                                  HorizontalOptions="End"
-                                 Margin="0,0,20,0"
+                                 Margin="0,0,5,0"
                                  BackgroundColor="Transparent"
                                  HeightRequest="40">
-                </ImageButton>
+            </ImageButton>
 
-                <local:RoundedEntry Grid.Row="2"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="3"
-                                    VerticalOptions="StartAndExpand"                                   
-                                    Margin="10,0,0,0"
-                                    Keyboard="Numeric"
-                                    Placeholder="Insert the track's ID here">
-                </local:RoundedEntry>
+            <local:RoundedEntry   Grid.Row="2"
+                                  VerticalOptions="StartAndExpand"
+                                  Text="{Binding Id}"
+                                  Margin="30,0,30,0"
+                                  Keyboard="Numeric"
+                                  Placeholder="Insert the tracks ID here">
+            </local:RoundedEntry>
 
-                <Button Text="Search" 
-                        TextColor="White"
-                        Grid.Row="2"
-                        Grid.Column="3"
-                        FontAttributes="Bold"                        
-                        Margin="0,0,10,0"
-                        CornerRadius="20"
-                        BackgroundColor="#448AFF">
-                </Button>
-            </Grid>
-            <CollectionView ItemsSource="{Binding ModelTracks}">
+            <ImageButton Grid.Row="2"
+                                 Source="ic_search"
+                                 Margin="0,0,45,0"
+                                 HeightRequest="30"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 Command="{Binding SearchTrackCommand}">
+
+            </ImageButton>
+
+            <CollectionView Grid.Row="4"
+                            ItemsSource="{Binding ModelTracks}">
+                
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" Margin="12">
@@ -92,7 +79,7 @@
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-            </CollectionView>            
-        </StackLayout>
+            </CollectionView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

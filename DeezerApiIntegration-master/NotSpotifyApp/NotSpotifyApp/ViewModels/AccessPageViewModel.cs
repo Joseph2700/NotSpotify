@@ -13,7 +13,7 @@ namespace NotSpotifyApp.ViewModels
 {
     public class AccessPageViewModel : BaseViewModel
     {
-       
+
         public DelegateCommand FingerprintCommand { get; set; }
         public INavigationService _navigationService { get; set; }
         public IPageDialogService _pageDialogService { get; set; }
@@ -22,34 +22,28 @@ namespace NotSpotifyApp.ViewModels
             _navigationService = navigationService;
             _pageDialogService = pageDialogueService;
 
-            FingerprintCommand = new DelegateCommand(async() =>
+            FingerprintCommand = new DelegateCommand(async () =>
             {
-<<<<<<< Updated upstream
+
                 await FingerprintMethod();
             });
 
-             async Task FingerprintMethod()
-=======
-               await FingerprintMethod();
-            });
-
-             
-        }
-
-        async Task FingerprintMethod()
-        {
-
-            var result = await CrossFingerprint.Current.AuthenticateAsync("Use your fingerprint to access NotSpotifyApp!");
-            if (result.Authenticated)
+            async Task FingerprintMethod()
             {
-                await _navigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
-            }
-            else
->>>>>>> Stashed changes
-            {
-                await _pageDialogService.DisplayActionSheetAsync(AlertTextConstants.FingerprintError,"", AlertTextConstants.OptionButtonText);
-            }
-        }
 
+                var result = await CrossFingerprint.Current.AuthenticateAsync("Use your fingerprint to access NotSpotifyApp!");
+                if (result.Authenticated)
+                {
+                    await _navigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
+                }
+                else
+
+                {
+                    await _pageDialogService.DisplayActionSheetAsync(AlertTextConstants.FingerprintError, "", AlertTextConstants.OptionButtonText);
+                }
+            }
+
+        }
     }
 }
+

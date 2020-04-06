@@ -6,76 +6,64 @@
              xmlns:local="clr-namespace:NotSpotifyApp.Controls"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
              x:Class="NotSpotifyApp.Views.AlbumPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                    </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="#448AFF">
+                    <Label Grid.Row="0"
+                           FontSize="25"
+                           FontFamily="{StaticResource TitleStyle}"
+                           Text="Search albums"
+                           TextColor="White"
+                           HorizontalOptions="Center">
+                    </Label>
+                    
+                </Frame>
 
-                    <Frame Grid.Row="0"
-                       Grid.ColumnSpan="4"
-                       BackgroundColor ="#448AFF">
-
-                        <Label Text="Albums"
-                           Grid.Row="0"
-                           Grid.ColumnSpan="3"
-                           VerticalOptions="Center"
-                           FontAttributes="Bold"
-                           FontSize="20"
-                           TextColor="White">
-                        </Label>
-                       
-                    </Frame>
-
-                    <ImageButton Source="ic_favorite"
+                <ImageButton Source="ic_favorite"
                                  Grid.Row="0"
-                                 Grid.Column="3"
                                  HorizontalOptions="End"
-                                 Margin="0,0,20,0"
+                                 Margin="0,0,5,0"
                                  BackgroundColor="Transparent"
                                  HeightRequest="40">
-                    </ImageButton>
+                </ImageButton>
 
-                    <local:RoundedEntry Grid.Row="2"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="3"
-                                    VerticalOptions="StartAndExpand"
-                                    Text="{Binding Id}"
-                                    Margin="10,0,0,0"
-                                    Keyboard="Numeric"
-                                    Placeholder="Insert the album's ID here">
-                    </local:RoundedEntry>
+                <local:RoundedEntry     Grid.Row="2"
+                                        VerticalOptions="StartAndExpand"
+                                        Text="{Binding Id}"
+                                        Margin="30,0,30,0"
+                                        Keyboard="Numeric"
+                                        Placeholder="Insert the albums ID here">
+                </local:RoundedEntry>
 
-                    <Button Text="Search" 
-                        TextColor="White"
-                        Grid.Row="2"
-                        Grid.Column="3"
-                        FontAttributes="Bold"
-                        Command="{Binding SearchAlbumCommand}"
-                        Margin="0,0,10,0"
-                        CornerRadius="20"
-                        BackgroundColor="#F44336">
-                    </Button>
-                </Grid>
+                <ImageButton Grid.Row="2"
+                                 Source="ic_search"
+                                 Margin="0,0,45,0"
+                                 HeightRequest="30"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 Command="{Binding SearchAlbumCommand}">
 
-                <CollectionView ItemsSource="{Binding ModelAlbums}">
+                </ImageButton>
+
+
+                <CollectionView Grid.Row="4" 
+                                ItemsSource="{Binding ModelAlbums}">
+                    
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
+                    
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Grid Padding="10" Margin="12">
@@ -112,12 +100,15 @@
                                         TextColor="Black"
                                         Text="{Binding ReleaseDate}">
                                 </Label>
-                                       
+
                             </Grid>
+
                         </DataTemplate>
+
                     </CollectionView.ItemTemplate>
+
                 </CollectionView>
-            </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
