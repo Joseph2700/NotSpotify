@@ -9,6 +9,8 @@ namespace NotSpotifyApp.Utilities
         public const string Home = "HomePage";
         public const string TabbedPageMenu = "/OptionsTabbedPage?selectedTab=HomePage";
         public const string ArtistPage = "ArtistPage";
+        public const string FavoriteAlbumsPage = "FavoriteAlbumsPage";
+        public const string FavoriteTracksPage = "FavoriteTracksPage";
         public const string ArtistInfoPage = "ArtistInfoPage";
         public const string AlbumInfoPage = "AlbumInfoPage";
         public const string AccessPage = "/AccessPage";

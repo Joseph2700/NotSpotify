@@ -37,7 +37,7 @@
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
                        TextColor="White"
-                       FontSize="25">
+                       FontSize="20">
                     </Label>
                 </Frame>
 
@@ -47,13 +47,13 @@
                     </Image.GestureRecognizers>
                 </Image>
 
-                <ImageButton Source="ic_favorite"
+                <ImageButton Source="ic_fav"
                                  Grid.Row="0"
                                  Grid.Column="3"
                                  HorizontalOptions="Center"
                                  Margin="0,0,30,0"
                                  BackgroundColor="Transparent"
-                                 HeightRequest="40">
+                                 HeightRequest="45">
                     </ImageButton>
 
                 <ImageButton Source="ic_share"
@@ -63,7 +63,7 @@
                                  Margin="0,0,5,0"
                                  Command="{Binding ShareAlbumCommand}"
                                  BackgroundColor="Transparent"
-                                 HeightRequest="40">
+                                 HeightRequest="35">
                 </ImageButton>
 
                 <Image Source="{Binding AlbumInfo.CoverXl}" Grid.Row="2" Grid.ColumnSpan="4"/>

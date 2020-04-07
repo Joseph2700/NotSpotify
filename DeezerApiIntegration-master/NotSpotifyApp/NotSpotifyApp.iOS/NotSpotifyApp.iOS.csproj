@@ -292,4 +292,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_selectedFav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_fav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_sharing.png" />
+  </ItemGroup>
 </Project>

@@ -33,6 +33,8 @@ namespace NotSpotifyApp
             containerRegistry.RegisterForNavigation<GenrePage, GenrePageViewModel>();
             containerRegistry.RegisterForNavigation<SongPlayerPage, SongPlayerPageViewModel>();
             containerRegistry.RegisterForNavigation<TrackPage, TrackPageViewModel>();
+            containerRegistry.RegisterForNavigation<FavoriteAlbumsPage, FavoriteAlbumsPageViewModel>();
+            containerRegistry.RegisterForNavigation<FavoriteTracksPage, FavoriteTracksPageViewModel>();
             containerRegistry.Register<IDeezerApiService, DeezerApiService>();
         }
 

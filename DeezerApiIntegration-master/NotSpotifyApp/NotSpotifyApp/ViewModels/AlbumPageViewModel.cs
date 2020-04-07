@@ -20,7 +20,7 @@ namespace NotSpotifyApp.ViewModels
 		    private readonly INavigationService _navigationService;
 		    public ObservableCollection<Album> ModelAlbums { get; set; } = new ObservableCollection<Album>();
 			public DelegateCommand SearchAlbumCommand { get; set; }
-			public DelegateCommand GoToFavoriteAlbumsCommand { get; set; }
+			public DelegateCommand GoToFavoriteAlbumsPageCommand { get; set; } 
 			public string Id { get; set; }
 
 			public AlbumPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
@@ -31,6 +31,11 @@ namespace NotSpotifyApp.ViewModels
 				SearchAlbumCommand = new DelegateCommand(async () =>
 				{
 					await SearchAlbum();
+				});
+
+				GoToFavoriteAlbumsPageCommand = new DelegateCommand(async () =>
+				{
+					await navigationService.NavigateAsync(NavigationConstants.FavoriteAlbumsPage);
 				});
 			}
 

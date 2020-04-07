@@ -173,6 +173,9 @@
     <AndroidResource Include="Resources\drawable\ic_music.png" />
     <AndroidResource Include="Resources\drawable\AppIcon.png" />
     <AndroidResource Include="Resources\drawable\ic_search.png" />
+    <AndroidResource Include="Resources\drawable\ic_selectedFav.png" />
+    <AndroidResource Include="Resources\drawable\ic_fav.png" />
+    <AndroidResource Include="Resources\drawable\ic_sharing.png" />
     <Content Include="Resources\mipmap-hdpi\AppIcon.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />

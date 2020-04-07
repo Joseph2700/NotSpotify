@@ -30,12 +30,13 @@
                     
                 </Frame>
 
-                <ImageButton Source="ic_favorite"
+                <ImageButton Source="ic_fav"
                                  Grid.Row="0"
                                  HorizontalOptions="End"
                                  Margin="0,0,5,0"
                                  BackgroundColor="Transparent"
-                                 HeightRequest="40">
+                                 Command="{Binding GoToFavoriteAlbumsPageCommand}"
+                                 HeightRequest="50">
                 </ImageButton>
 
                 <local:RoundedEntry     Grid.Row="2"

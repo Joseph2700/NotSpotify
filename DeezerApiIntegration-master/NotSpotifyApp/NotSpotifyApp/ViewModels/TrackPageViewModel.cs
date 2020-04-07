@@ -18,7 +18,7 @@ namespace NotSpotifyApp.ViewModels
         private readonly INavigationService _navigationService;
         public ObservableCollection<Track> ModelTracks { get; set; } = new ObservableCollection<Track>();
         public DelegateCommand SearchTrackCommand { get; set; }
-        public DelegateCommand GoToFavoriteTracksCommand { get; set; }
+        public DelegateCommand GoToFavoriteTracksPageCommand { get; set; }
         public string Id { get; set; }
 
         public TrackPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
@@ -29,7 +29,12 @@ namespace NotSpotifyApp.ViewModels
             SearchTrackCommand = new DelegateCommand(async () =>
             {
                 await SearchTrack();
-            });           
+            });
+
+            GoToFavoriteTracksPageCommand = new DelegateCommand(async () =>
+            {
+                await navigationService.NavigateAsync(NavigationConstants.FavoriteTracksPage);
+            });
         }
         async Task SearchTrack()
         {
