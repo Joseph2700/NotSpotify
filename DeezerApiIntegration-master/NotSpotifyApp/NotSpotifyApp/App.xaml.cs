@@ -17,8 +17,8 @@ namespace NotSpotifyApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            //NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
-            NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
+            NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
+            //NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
             
         }
 

@@ -1,5 +1,7 @@
 ﻿using NotSpotifyApp.Models;
 using NotSpotifyApp.Services;
+using Plugin.Share;
+using Plugin.Share.Abstractions;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -15,6 +17,7 @@ namespace NotSpotifyApp.ViewModels
         public Track TrackInfo { get; set; }
         public DelegateCommand GetTrackInfoCommand { get; set; }
         public DelegateCommand ReturnToTrackPageCommand { get; set; }
+        public DelegateCommand ShareTrackCommand { get; set; }
         public string Id { get; set; }
 
         public TrackInfoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
@@ -27,6 +30,15 @@ namespace NotSpotifyApp.ViewModels
             ReturnToTrackPageCommand = new DelegateCommand(async () =>
             {
                 await navigationService.GoBackAsync();
+            });
+
+            ShareTrackCommand = new DelegateCommand(async () =>
+            {
+                await CrossShare.Current.Share(new ShareMessage
+                {
+                    Title = $"Hey check this artist out! - {TrackInfo.Title}",
+                    Url = $"{TrackInfo.Share}"
+                });
             });
         }
 

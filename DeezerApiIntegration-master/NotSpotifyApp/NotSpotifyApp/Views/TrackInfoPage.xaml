@@ -30,6 +30,7 @@
                        Text="{Binding TrackInfo.Title}"
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
+                       FontFamily="{StaticResource TitleStyle}"
                        TextColor="White"
                        FontSize="20">
                     </Label>
@@ -48,6 +49,16 @@
                                  Margin="0,0,30,0"
                                  BackgroundColor="Transparent"
                                  HeightRequest="45">
+                </ImageButton>
+
+                <ImageButton Source="ic_share"
+                                 Grid.Row="0"
+                                 Grid.Column="3"
+                                 HorizontalOptions="End"
+                                 Margin="0,0,5,0"
+                                 Command="{Binding ShareTrackCommand}"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="35">
                 </ImageButton>
 
                 <Image Source="{Binding TrackInfo.Album.CoverXl}" Grid.Row="1" Grid.ColumnSpan="4"/>

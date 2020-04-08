@@ -29,16 +29,18 @@
                         <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White" HeightRequest="10"/>
-
+                <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White">
                     <Label Grid.Row="0"
                            Grid.ColumnSpan="4"
                            Text="{Binding ArtistInfo.Name}"
                            HorizontalOptions="CenterAndExpand"
                            FontAttributes="Bold"
+                           FontFamily="{StaticResource TitleStyle}"
                            TextColor="White"
-                           FontSize="25">
+                           FontSize="20">
                     </Label>
+                </Frame>
+
 
                 <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="5,0,0,0">
                     <Image.GestureRecognizers>

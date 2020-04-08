@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behaviours="clr-namespace:NotSpotifyApp.Behaviours"
              mc:Ignorable="d"
              BackgroundColor="LightSkyBlue"
              x:Class="NotSpotifyApp.Views.AccessPage">
@@ -23,7 +24,11 @@
                             TextColor="White"
                             CornerRadius="20"
                             Command="{Binding FingerprintCommand}"
-                            BackgroundColor="#448AFF"/>
+                            BackgroundColor="#448AFF">
+                        <Button.Behaviors>
+                            <behaviours:ViewTappedButtonBehavior AnimationType="Scale"/>
+                        </Button.Behaviors>
+                    </Button>
                 </StackLayout>
             </Grid>
         </ScrollView>
