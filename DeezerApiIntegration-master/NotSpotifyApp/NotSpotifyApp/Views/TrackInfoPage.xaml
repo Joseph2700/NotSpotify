@@ -15,6 +15,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -66,12 +68,29 @@
                 <Label Grid.Row="2"
                            Grid.ColumnSpan="4"
                            HorizontalOptions="CenterAndExpand"
+                           Text="Artist" 
+                           FontSize="20"
+                           FontAttributes="Bold"                          
+                           TextColor="Black"/>
+                
+                <Label Grid.Row="3"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontAttributes="Italic"
+                           FontSize="18"
+                           Text="{Binding TrackInfo.Artist.Name}">
+                </Label>
+
+                <Label Grid.Row="4"
+                           Grid.ColumnSpan="4"
+                           HorizontalOptions="CenterAndExpand"
                            Text="Release Date" 
                            FontSize="20"
                            FontAttributes="Bold"                          
                            TextColor="Black"/>
 
-                <Label Grid.Row="3"
+                <Label Grid.Row="5"
                            Grid.ColumnSpan="4"
                            HorizontalOptions="CenterAndExpand"
                            TextColor="Black"
@@ -81,7 +100,7 @@
                 </Label>
 
 
-                <Label Grid.Row="4"
+                <Label Grid.Row="6"
                            Grid.ColumnSpan="4"
                            HorizontalOptions="CenterAndExpand"
                            Text="Duration" 
@@ -90,7 +109,7 @@
                            TextColor="Black">
                 </Label>
 
-                <Label Grid.Row="5"
+                <Label Grid.Row="7"
                            Grid.ColumnSpan="4"
                            HorizontalOptions="CenterAndExpand"
                            TextColor="Black"
