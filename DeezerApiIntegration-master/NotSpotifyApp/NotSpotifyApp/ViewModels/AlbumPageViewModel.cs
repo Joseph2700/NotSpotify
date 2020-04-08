@@ -51,14 +51,15 @@ namespace NotSpotifyApp.ViewModels
 			}
 
 
-		public void LoadModelAlbums()
-			{
-				ModelAlbums.Add(new Album() { Title = "YHLQMDLG", CoverXl = "YHLQMDLG.jpg", ReleaseDate = "29 de febrero de 2020" });
-				ModelAlbums.Add(new Album() { Title = "Blonde", CoverXl = "Blond.jpg", ReleaseDate = "20 de agosto de 2016"});
-				ModelAlbums.Add(new Album() { Title = "Saturation", CoverXl = "Saturation.jpg", ReleaseDate = "9 de junio de 2017" });
-				ModelAlbums.Add(new Album() { Title = "T R A P S O U L", CoverXl = "Trapsoul.jpg", ReleaseDate = "2 de octubre de 2015" });
-			
-			}
+			public void LoadModelAlbums()
+	        {
+					ModelAlbums.Add(new Album() { Title = "YHLQMDLG", CoverXl = "YHLQMDLG.jpg", ReleaseDate = "February 29th 2020" });
+					ModelAlbums.Add(new Album() { Title = "Blonde", CoverXl = "Blonde.jpg", ReleaseDate = "August 20th 2016"});
+					ModelAlbums.Add(new Album() { Title = "Fine Line", CoverXl = "FineLine.jpg", ReleaseDate = "December 13th 2019" });
+					ModelAlbums.Add(new Album() { Title = "T R A P S O U L", CoverXl = "TrapSoul.jpg", ReleaseDate = "October 2nd 2015" });
+					ModelAlbums.Add(new Album() { Title = "Clé: Levanter", CoverXl = "Levanter.jpg", ReleaseDate = "December 9th 2019" });
+			        ModelAlbums.Add(new Album() { Title = "Changes", CoverXl = "Changes.jpg", ReleaseDate = "February 14th 2019" });
+		    }
 
 	    }
 }

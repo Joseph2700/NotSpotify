@@ -56,18 +56,18 @@ namespace NotSpotifyApp.ViewModels
 
         public async void DisplaySelectedElement()
         {
-           await _dialogService.DisplayAlertAsync($"{AlertTextConstants.SelectedText}",$"Name: {_selectedArtist.Name}",$"{AlertTextConstants.OptionButtonText}");
+           await _dialogService.DisplayAlertAsync($"{AlertTextConstants.SelectedText}",$"Artist name: {_selectedArtist.Name}",$"{AlertTextConstants.OptionButtonText}");
         }
 
         public void LoadModelArtists()
         {
-            ModelArtists.Add(new Artist() { Name = "Jhené Aiko", Picture = "JheneAiko.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Fifth Harmony", Picture = "FifthHarmony.jpg" });
             ModelArtists.Add(new Artist() { Name = "Lil Uzi Vert", Picture = "LilUziVert.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Lil Baby", Picture = "LilBaby.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Bad Bunny", Picture = "BadBunny.jpg" });
-            ModelArtists.Add(new Artist() { Name = "NCT 127", Picture = "NCT127.jpg" });
-            ModelArtists.Add(new Artist() { Name = "BTS", Picture = "BTS.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Post Malone", Picture = "PostMalone.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Halsey", Picture = "Halsey.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Travis Scott", Picture = "TravisScott.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Troye Sivan", Picture = "TroyeSivan.jpg" });
+            ModelArtists.Add(new Artist() { Name = "Dua Lipa", Picture = "DuaLipa.jpg" });
+            ModelArtists.Add(new Artist() { Name = "The Weeknd", Picture = "TheWeeknd.jpg" });
         }
 
         

@@ -118,8 +118,7 @@ namespace NotSpotifyApp.ViewModels
             Tracks.Add(new Track { Rank = 4, Id = 742744952, Title = "Circles - Post Malone" });
             Tracks.Add(new Track { Rank = 5, Id = 847699482, Title = "Life is Good - Future ft Drake" });
             Tracks.Add(new Track { Rank = 6, Id = 826264812, Title =  "Adore You - Harry Styles" });
-        }
-        
+        }     
         
     }
 }

@@ -265,4 +265,34 @@
   <ItemGroup>
     <BundleResource Include="Resources\SOS.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Test2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FineLine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TrapSoul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Levanter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Blonde.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Changes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TravisScott.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TroyeSivan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FifthHarmony.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Halsey.jpg" />
+  </ItemGroup>
 </Project>

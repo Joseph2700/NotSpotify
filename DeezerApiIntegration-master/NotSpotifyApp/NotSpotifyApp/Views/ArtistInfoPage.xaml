@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             BackgroundImageSource="WBackgroundPicture.jpg"
+             BackgroundImageSource="Test2.jpg"
              x:Class="NotSpotifyApp.Views.ArtistInfoPage">
     <ContentPage.Content>
         <ScrollView>
@@ -23,10 +23,10 @@
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                 <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White">
