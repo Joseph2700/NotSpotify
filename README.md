@@ -25,7 +25,7 @@ Deezer API : https://rapidapi.com/deezerdevs/api/deezer-1
 <br>
 <img src="TrackPage.PNG"/>
 
-<h2 style="text-align: center;"><strong>Access screen</strong></h2>
+<h2 style="text-align: center;"><strong>Artist Info screen</strong></h2>
 <br>
 <img src="ArtistInfoPage.PNG"/>
 
