@@ -1,19 +1,52 @@
 # NotSpotifyApp
-NotSpotifyApp is an app that retrieves its data from Deezer API allowing you to search an artist,album or genre by it's Deezer ID and finally displaying its info on screen, it also allows you to add your favorite albums, tracks and also allows you to play music. 
+NotSpotifyApp is an app that retrieves its data from the Deezer API, allowing you to search for an artist, album or track by it's Deezer ID and finally displaying its info on screen. It also allows you to add your favorite albums, tracks and also allows you to play music. 
 
 AppMockup URL: https://imgur.com/NZqnlSp  
 Trello URL: https://trello.com/b/FoXJ3IcV/notspotifyapp
 Deezer API : https://rapidapi.com/deezerdevs/api/deezer-1
  
-<h2 style="text-align: center;"><strong>App screenshots</strong></h2>
- 
-<img src="AccessPage.PNG" /><img src="HomePage.PNG"/>
-<img src="ArtistPage.PNG"/><img src="AlbumPage.PNG" />
-<img src="TrackPage.PNG"/><img src="ArtistInfoPage.PNG"/>
-<img src="AlbumInfoPage.PNG"/><img src="TrackInfoPage.PNG"/>
+<h2 style="text-align: center;"><strong>Access screen</strong></h2>
+<br>
+<img src="AccessPage.PNG" />
+
+<h2 style="text-align: center;"><strong>Home screen</strong></h2>
+<br>
+<img src="HomePage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Artists screen</strong></h2>
+<br>
+<img src="ArtistPage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Albums screen</strong></h2>
+<br>
+<img src="AlbumPage.PNG" />
+
+<h2 style="text-align: center;"><strong>Tracks screen</strong></h2>
+<br>
+<img src="TrackPage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Artist Info screen</strong></h2>
+<br>
+<img src="ArtistInfoPage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Album Info screen</strong></h2>
+<br>
+<img src="AlbumInfoPage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Track Info screen</strong></h2>
+<br>
+<img src="TrackInfoPage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Song Player screen</strong></h2>
+<br>
 <img src="SongPlayerPage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Favorite Albums screen</strong></h2>
 <br>
 <img src="FavoriteAlbumsPage.PNG"/>
+
+<h2 style="text-align: center;"><strong>Favorite Tracks screen</strong></h2>
+<br>
 <img src="FavoriteTracksPage.PNG"/>
 
 <h2 style="text-align: center;"><strong>Team members</strong></h2>
