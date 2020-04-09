@@ -4,9 +4,15 @@ NotSpotifyApp is an app sample under development for the mobile app development 
 
 - Used API: (https://rapidapi.com/deezerdevs/api/deezer-1)
  
-<h2 style="text-align: center;"><strong>ArtistPage screen</strong></h2>
-<p align="center"><img src="ArtistPageCapture.PNG" /></p>
-<br> 
-<h2 style="text-align: center;"><strong>AlbumPage screen</strong></h2>
-<p align="center"><img src="AlbumPageCapture.PNG"/></p>
-<br> 
+<h2 style="text-align: center;"><strong>Access screen</strong></h2>
+<br>
+<h2 style="text-align: center;"><strong>Tabbed Home screen</strong></h2>
+<br>
+<h2 style="text-align: center;"><strong>Artists screen</strong></h2>
+<br>
+<h2 style="text-align: center;"><strong>Albums screen</strong></h2>
+<br>
+<h2 style="text-align: center;"><strong>Tracks screen</strong></h2>
+<br>
+<h2 style="text-align: center;"><strong>Song Player screen</strong></h2>
+<br>
