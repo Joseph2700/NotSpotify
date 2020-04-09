@@ -10,8 +10,3 @@ NotSpotifyApp is an app sample under development for the mobile app development 
 <h2 style="text-align: center;"><strong>AlbumPage screen</strong></h2>
 <p align="center"><img src="AlbumPageCapture.PNG"/></p>
 <br> 
-<h2 style="text-align: center;"><strong>GenrePage screen</strong></h2>
-<p align="center"><img src="GenrePageCapture.PNG"/></p>
-
-
- 
