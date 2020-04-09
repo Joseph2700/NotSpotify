@@ -9,6 +9,8 @@ namespace NotSpotifyApp.Utilities
         public const string TitleText = "Connection Error";
         public const string MessageText = "There was a problem with your internet connection. Please check your network connection, then try again";
         public const string OptionButtonText = "OK";
+        public const string AddedFavoriteTitle = "Favorite added!";
+        public const string AddedFavoriteMessage = "Item added to your favorites list successfully!";
         public const string SelectedText = "You selected:";
         public const string FingerprintError = "Invalid fingerprint, please try again.";
         public const string EmptyFieldTitle = "Empty field";

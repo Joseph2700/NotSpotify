@@ -51,10 +51,10 @@
 
                 </ImageButton>
 
-                <CollectionView ItemsSource="{Binding ModelArtists}"
-                                    SelectionMode="Single"
-                                    SelectedItem="{Binding SelectedArtist,Mode=TwoWay}"   
-                                    Grid.Row="3">
+                <CollectionView Grid.Row="3"
+                                SelectionMode="Single"
+                                ItemsSource="{Binding ModelArtists}"                         
+                                SelectedItem="{Binding SelectedArtist,Mode=TwoWay}">                                      
                     
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" Span="2"/>

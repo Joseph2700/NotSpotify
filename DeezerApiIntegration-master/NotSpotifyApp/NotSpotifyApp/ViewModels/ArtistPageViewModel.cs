@@ -56,22 +56,20 @@ namespace NotSpotifyApp.ViewModels
 
         public async void DisplaySelectedElement()
         {
-           await _dialogService.DisplayAlertAsync($"{AlertTextConstants.SelectedText}",$"Artist name: {_selectedArtist.Name}",$"{AlertTextConstants.OptionButtonText}");
+           await _dialogService.DisplayAlertAsync($"{AlertTextConstants.SelectedText}",$"Artist name: {_selectedArtist.Name} \nArtist ID: {_selectedArtist.Id}",$"{AlertTextConstants.OptionButtonText}");
         }
 
         public void LoadModelArtists()
         {
-            ModelArtists.Add(new Artist() { Name = "Fifth Harmony", Picture = "FifthHarmony.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Lil Uzi Vert", Picture = "LilUziVert.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Halsey", Picture = "Halsey.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Travis Scott", Picture = "TravisScott.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Troye Sivan", Picture = "TroyeSivan.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Dua Lipa", Picture = "DuaLipa.jpg" });
-            ModelArtists.Add(new Artist() { Name = "The Weeknd", Picture = "TheWeeknd.jpg" });
-        }
+            ModelArtists.Add(new Artist() { Id = 4974921, Name = "Fifth Harmony", Picture = "FifthHarmony.jpg" });
+            ModelArtists.Add(new Artist() { Id = 7101343, Name = "Lil Uzi Vert", Picture = "LilUziVert.jpg" });
+            ModelArtists.Add(new Artist() { Id = 5292512, Name = "Halsey", Picture = "Halsey.jpg" });
+            ModelArtists.Add(new Artist() { Id = 4495513, Name = "Travis Scott", Picture = "TravisScott.jpg" });
+            ModelArtists.Add(new Artist() { Id = 4746199, Name = "Troye Sivan", Picture = "TroyeSivan.jpg" });
+            ModelArtists.Add(new Artist() { Id = 8706544, Name = "Dua Lipa", Picture = "DuaLipa.jpg" });
 
-        
-           
+        }
+       
     }
 }
 

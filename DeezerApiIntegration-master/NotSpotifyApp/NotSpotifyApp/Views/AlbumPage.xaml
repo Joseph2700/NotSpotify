@@ -60,7 +60,9 @@
 
 
                 <CollectionView Grid.Row="4" 
-                                ItemsSource="{Binding ModelAlbums}">
+                                SelectionMode="Single"
+                                ItemsSource="{Binding ModelAlbums}"
+                                SelectedItem="{Binding SelectedAlbum,Mode=TwoWay}">
                     
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical"/>

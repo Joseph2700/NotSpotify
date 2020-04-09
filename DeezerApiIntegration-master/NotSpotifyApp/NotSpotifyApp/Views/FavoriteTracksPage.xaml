@@ -16,7 +16,7 @@
 
                 <Frame BackgroundColor="#F44336">
                     <Label Grid.Row="0"
-                           FontSize="25"
+                           FontSize="20"
                            FontFamily="{StaticResource TitleStyle}"
                            Text="Favorite tracks"
                            TextColor="White"
@@ -32,11 +32,30 @@
                 </Image>
 
                 <Image Grid.Row="0"
-                       Margin="0,0,70,0"
+                       Margin="0,0,45,0"
                        Source="ic_selectedFav"
                        HeightRequest="50"
                        HorizontalOptions="End">
                 </Image>
+
+                <CollectionView  Grid.Row="1"
+                                 ItemsSource="{Binding FavoriteTracksList}">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image Source="{Binding Album.CoverXl}"
+                                       HeightRequest="130"/>
+                                
+                                <Label Text="{Binding Title}"
+                                       FontSize="20"
+                                       FontFamily="{StaticResource TitleStyle}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
             </Grid>
         </ScrollView>

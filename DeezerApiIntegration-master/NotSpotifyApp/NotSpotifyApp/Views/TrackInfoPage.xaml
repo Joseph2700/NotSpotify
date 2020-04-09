@@ -50,7 +50,9 @@
                                  HorizontalOptions="Center"
                                  Margin="0,0,30,0"
                                  BackgroundColor="Transparent"
-                                 HeightRequest="45">
+                                 HeightRequest="45"
+                                 Command="{Binding AddFavoriteTrackCommand}">
+                                 
                 </ImageButton>
 
                 <ImageButton Source="ic_share"

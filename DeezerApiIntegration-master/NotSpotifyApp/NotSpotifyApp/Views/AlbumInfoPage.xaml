@@ -54,8 +54,10 @@
                                  HorizontalOptions="Center"
                                  Margin="0,0,30,0"
                                  BackgroundColor="Transparent"
-                                 HeightRequest="45">
-                    </ImageButton>
+                                 HeightRequest="45"
+                                 Command="{Binding AddFavoriteAlbumCommand}">
+                                 
+                </ImageButton>
 
                 <ImageButton Source="ic_share"
                                  Grid.Row="0"
