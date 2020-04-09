@@ -43,7 +43,7 @@ namespace NotSpotifyApp.ViewModels
 
             if (await CheckInternetConnection())
             {
-                var navigation = _navigationService.NavigateAsync(NavigationConstants.TrackInfoPage, TrackID);
+                var navigation = _navigationService.NavigateAsync(NavigationConstants.SongPlayerPage, TrackID);
             }
         }
         public void LoadModelTracks()
@@ -52,7 +52,7 @@ namespace NotSpotifyApp.ViewModels
             ModelTracks.Add(new Track() { Title = "Don't Start Now - Dua Lipa" });            
             ModelTracks.Add(new Track() { Title = "Life is Good - Future ft Drake" });
             ModelTracks.Add(new Track() { Title = "Blinding Lights - The Weeknd" });
-            ModelTracks.Add(new Track() { Title = "Circles - Post Malone", });
+            ModelTracks.Add(new Track() { Title = "Circles - Post Malone"});
         }
     }
 }

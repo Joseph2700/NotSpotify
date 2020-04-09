@@ -35,7 +35,7 @@
                 </Image.GestureRecognizers>
             </Image>
 
-            <Image Source="{Binding TrackInfo.Album.CoverXl}" Grid.Row="1" Grid.ColumnSpan="5"/>
+            <Image Source="{Binding TrackInfo.Album.CoverMedium}" Grid.Row="1" Grid.ColumnSpan="5"/>
 
             <Label Text="{Binding TrackInfo.Title}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,20,0,0" Style="{StaticResource Title}"/>
             <Label Text="{Binding TrackInfo.Artist.Name}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,0,20" Style="{StaticResource Information}"/>
@@ -60,10 +60,17 @@
             </ImageButton>
 
             <ImageButton Source="ic_play"
-                         Command="{Binding PlayPauseCommand}"
+                         Command="{Binding PlayTrackCommand}"
                      HeightRequest="60"
                      BackgroundColor="Transparent">
             </ImageButton>
+
+            <ImageButton Source="ic_pause"
+                         Command="{Binding PauseTrackCommand}"
+                     HeightRequest="60"
+                     BackgroundColor="Transparent">
+            </ImageButton>
+
 
             <ImageButton Source="ic_next"
                          Command="{Binding NextTrackCommand}"
