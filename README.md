@@ -1,6 +1,6 @@
 # NotSpotifyApp
 
-NotSpotifyApp is a app sample under development for the mobile app development course at the Instituto Tecnológico de Santo Domingo. NotSpotifyApp is an app that retrieves its data from Deezer API allowing you to search an artist,album or genre by it's Deezer ID and finally displaying its info on screen. Developed using Xamarin Forms and Prism Framework. 
+NotSpotifyApp is an app sample under development for the mobile app development course at the Tecnologic Institute of Santo Domingo (INTEC). This app retrieves its data from the Deezer API, allowing you to search for an artist, album or genre by it's Deezer ID and finally displaying its info on screen. Developed using Xamarin Forms and Prism Framework. 
 
 - Used API: (https://rapidapi.com/deezerdevs/api/deezer-1)
  
