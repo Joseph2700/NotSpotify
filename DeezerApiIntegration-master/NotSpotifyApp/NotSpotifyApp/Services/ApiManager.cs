@@ -155,7 +155,7 @@ namespace NotSpotifyApp.Services
 
                 if (trackBarrelResult != null)
                 {
-                    GetTracks.Add(trackBarrelResult);
+                    GetTracks.Add(trackBarrelResult);                
                 }
 
                 else

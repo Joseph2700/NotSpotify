@@ -132,7 +132,6 @@
     <AndroidResource Include="Resources\drawable\ic_favorite.png" />
     <AndroidResource Include="Resources\drawable\ic_share.png" />
     <AndroidResource Include="Resources\drawable\ic_next.png" />
-    <AndroidResource Include="Resources\drawable\ic_play.png" />
     <AndroidResource Include="Resources\drawable\ic_back.png" />
     <AndroidResource Include="Resources\drawable\ic_music.png" />
     <AndroidResource Include="Resources\drawable\AppIcon.png" />
@@ -219,10 +218,13 @@
     <AndroidResource Include="Resources\drawable\Test2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Circles.mp3" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_pause.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Circles.mp3" />
+    <AndroidResource Include="Resources\drawable\ic_play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

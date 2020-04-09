@@ -43,7 +43,7 @@ namespace NotSpotifyApp.ViewModels
 
             if (await CheckInternetConnection())
             {
-                var navigation = _navigationService.NavigateAsync(NavigationConstants.SongPlayerPage, TrackID);
+                var navigation = _navigationService.NavigateAsync(NavigationConstants.TrackInfoPage, TrackID);
             }
         }
         public void LoadModelTracks()

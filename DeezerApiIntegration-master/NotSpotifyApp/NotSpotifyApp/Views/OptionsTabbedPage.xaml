@@ -17,6 +17,5 @@
     <local:ArtistPage  Title="Artists"  IconImageSource="ic_mic"/>
     <local:AlbumPage Title="Albums" IconImageSource="ic_album"/>
     <local:TrackPage Title="Tracks" IconImageSource="ic_music"/>
-    <local:SongPlayerPage Title="Player" IconImageSource="ic_genre"/>
-    
+
 </TabbedPage>

@@ -119,6 +119,14 @@
                            FontSize="18"
                            Text="{Binding TrackInfo.Duration}">
                 </Label>
+
+                <Button Grid.Row="8"
+                        Grid.ColumnSpan="4"
+                        Margin="20,0,20,20"
+                        Text="Play song"
+                        CornerRadius="50"
+                        Command="{Binding GoToSongPlayerPageCommand}">
+                </Button>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

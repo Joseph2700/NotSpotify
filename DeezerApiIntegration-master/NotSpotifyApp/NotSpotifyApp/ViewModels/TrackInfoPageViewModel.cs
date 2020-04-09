@@ -18,15 +18,19 @@ namespace NotSpotifyApp.ViewModels
     {
         public Track TrackInfo { get; set; }
         protected IApiManager ApiManager = new ApiManager();
+        private readonly INavigationService _navigationService;
         public DelegateCommand GetTrackInfoCommand { get; set; }
         public DelegateCommand AddFavoriteTrackCommand { get; set; } 
         public DelegateCommand ReturnToTrackPageCommand { get; set; }
+        public DelegateCommand GoToSongPlayerPageCommand { get; set; }
         public DelegateCommand ShareTrackCommand { get; set; }
         public string SelectedTrackID { get; set; }
         public string Id { get; set; }
 
         public TrackInfoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
         {
+            _navigationService = navigationService; 
+
             GetTrackInfoCommand = new DelegateCommand(async () =>
             {
                 await GetTrackData();
@@ -46,6 +50,11 @@ namespace NotSpotifyApp.ViewModels
                 });
             });
 
+            GoToSongPlayerPageCommand = new DelegateCommand(async () =>
+            {
+                await GoToSongPlayer();
+            });
+
             AddFavoriteTrackCommand = new DelegateCommand(async () =>
             {
                 await AddTrackToFavorites();
@@ -62,6 +71,17 @@ namespace NotSpotifyApp.ViewModels
                 GetTrackInfoCommand.Execute();
             }
             SelectedTrackID = Id;
+        }
+
+        async Task GoToSongPlayer()
+        {
+            var TrackID = new NavigationParameters();
+            TrackID.Add("Track id", Id);
+
+            if (await CheckInternetConnection())
+            {
+                var navigation = _navigationService.NavigateAsync(NavigationConstants.SongPlayerPage, TrackID);
+            }
         }
 
         public async Task AddTrackToFavorites()

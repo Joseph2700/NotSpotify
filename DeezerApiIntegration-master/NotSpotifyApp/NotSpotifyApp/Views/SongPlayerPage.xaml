@@ -5,86 +5,90 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="NotSpotifyApp.Views.SongPlayerPage">
-    <StackLayout
-        BackgroundColor="Crimson">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+    <ScrollView>
+        <StackLayout
+        BackgroundColor="Wheat">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="5*"/>
-            </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="10">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding PreviousPageCommand}"/>
-                </Image.GestureRecognizers>
-            </Image>
+                <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" Grid.Row="0"  BackgroundColor ="Transparent" Margin="10">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PreviousPageCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
 
-            <Image Source="{Binding TrackInfo.Album.CoverMedium}" Grid.Row="1" Grid.ColumnSpan="5"/>
+                <Image Grid.Row="1"
+                       Grid.ColumnSpan="5"
+                       Source="{Binding TrackInfo.Album.CoverXl}">
+                </Image>
 
-            <Label Text="{Binding TrackInfo.Title}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,20,0,0" Style="{StaticResource Title}"/>
-            <Label Text="{Binding TrackInfo.Artist.Name}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="20,0,0,20" Style="{StaticResource Information}"/>
+                <Label Grid.Row="2"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="5"
+                       Margin="20,20,0,0"
+                       Text="{Binding TrackInfo.Title}"
+                       Style="{StaticResource Title}">
+                </Label>
 
-            <Label Text="HERE GOES MUSIC THE PLAYER" FontAttributes="Bold" Grid.Row="4" Grid.ColumnSpan="5" Margin="20" HorizontalOptions="CenterAndExpand"/>
-        </Grid>
+                <Label Grid.Row="3"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="5"
+                       Margin="20,0,0,20"
+                       Text="{Binding TrackInfo.Artist.Name}" 
+                       Style="{StaticResource Information}"/>
 
-        <StackLayout Orientation="Horizontal"
+            </Grid>
+
+            <StackLayout Orientation="Horizontal"
                      HorizontalOptions="CenterAndExpand">
 
-            <ImageButton Source="ic_favorite"
+                <ImageButton Source="ic_favorite"
                      HeightRequest="40"
                      Command="{Binding AddToFavoritesCommand}"
                      BackgroundColor="Transparent"
                      Margin="0,0,40,0">
-            </ImageButton>
+                </ImageButton>
 
-            <ImageButton Source="ic_back"
-                         Command="{Binding PreviusTrackCommand}"
-                     HeightRequest="60"
-                     BackgroundColor="Transparent">
-            </ImageButton>
+                <ImageButton Source="ic_play"
+                             Margin="0,0,30,0"
+                             Command="{Binding PlayTrackCommand}"
+                             HeightRequest="40"        
+                             BackgroundColor="Transparent">
+                </ImageButton>
 
-            <ImageButton Source="ic_play"
-                         Command="{Binding PlayTrackCommand}"
-                     HeightRequest="60"
-                     BackgroundColor="Transparent">
-            </ImageButton>
-
-            <ImageButton Source="ic_pause"
+                <ImageButton Source="ic_pause"
                          Command="{Binding PauseTrackCommand}"
-                     HeightRequest="60"
+                     HeightRequest="40"
                      BackgroundColor="Transparent">
-            </ImageButton>
+                </ImageButton>
 
-
-            <ImageButton Source="ic_next"
-                         Command="{Binding NextTrackCommand}"
-                     HeightRequest="60"
-                     BackgroundColor="Transparent">
-            </ImageButton>
-
-            <ImageButton Source="ic_share"
+                <ImageButton Source="ic_share"
                      HeightRequest="40"
                      Margin="40,0,0,0"
                      Command="{Binding ShareTrackCommand}"
                      BackgroundColor="Transparent">
-            </ImageButton>
+                </ImageButton>
 
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </ScrollView>
 </ContentPage>
