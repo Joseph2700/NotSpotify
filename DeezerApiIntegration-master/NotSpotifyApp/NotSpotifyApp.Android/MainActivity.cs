@@ -7,7 +7,6 @@ using Prism;
 using Prism.Ioc;
 using Xamarin.Forms;
 using Plugin.Fingerprint;
-using Plugin.CurrentActivity;
 
 namespace NotSpotifyApp.Droid
 {
@@ -16,13 +15,14 @@ namespace NotSpotifyApp.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
+            CrossFingerprint.SetCurrentActivityResolver(() => this);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
 
             Forms.SetFlags("CollectionView_Experimental");
+            Forms.SetFlags("CarouselView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App(new AndroidInitializer()));

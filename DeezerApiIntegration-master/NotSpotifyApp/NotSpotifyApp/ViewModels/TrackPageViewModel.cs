@@ -13,13 +13,12 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class TrackPageViewModel : BaseViewModel, INotifyPropertyChanged
+    public class TrackPageViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         private readonly INavigationService _navigationService;
         public ObservableCollection<Track> ModelTracks { get; set; } = new ObservableCollection<Track>();
         public DelegateCommand SearchTrackCommand { get; set; }
-        public DelegateCommand GoToFavoriteTracksCommand { get; set; }
+        public DelegateCommand GoToFavoriteTracksPageCommand { get; set; }
         public string Id { get; set; }
 
         public TrackPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
@@ -30,7 +29,12 @@ namespace NotSpotifyApp.ViewModels
             SearchTrackCommand = new DelegateCommand(async () =>
             {
                 await SearchTrack();
-            });           
+            });
+
+            GoToFavoriteTracksPageCommand = new DelegateCommand(async () =>
+            {
+                await navigationService.NavigateAsync(NavigationConstants.FavoriteTracksPage);
+            });
         }
         async Task SearchTrack()
         {
@@ -39,7 +43,7 @@ namespace NotSpotifyApp.ViewModels
 
             if (await CheckInternetConnection())
             {
-                var navigation = _navigationService.NavigateAsync(NavigationConstants.SongPlayerPage, TrackID);
+                var navigation = _navigationService.NavigateAsync(NavigationConstants.TrackInfoPage, TrackID);
             }
         }
         public void LoadModelTracks()
@@ -48,7 +52,7 @@ namespace NotSpotifyApp.ViewModels
             ModelTracks.Add(new Track() { Title = "Don't Start Now - Dua Lipa" });            
             ModelTracks.Add(new Track() { Title = "Life is Good - Future ft Drake" });
             ModelTracks.Add(new Track() { Title = "Blinding Lights - The Weeknd" });
-            ModelTracks.Add(new Track() { Title = "Circles - Post Malone" });
+            ModelTracks.Add(new Track() { Title = "Circles - Post Malone"});
         }
     }
 }

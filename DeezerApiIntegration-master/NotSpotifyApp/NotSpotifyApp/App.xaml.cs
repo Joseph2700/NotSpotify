@@ -7,7 +7,6 @@ using Prism.Ioc;
 using Prism.Unity;
 using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace NotSpotifyApp
 {
@@ -18,9 +17,8 @@ namespace NotSpotifyApp
         protected override void OnInitialized()
         {
             InitializeComponent();
+            NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
 
-            NavigationService.NavigateAsync(new Uri(NavigationConstants.TabbedPageMenu, UriKind.Absolute));
-            //NavigationService.NavigateAsync(new Uri(NavigationConstants.AccessPage, UriKind.Absolute));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -35,6 +33,10 @@ namespace NotSpotifyApp
             containerRegistry.RegisterForNavigation<GenrePage, GenrePageViewModel>();
             containerRegistry.RegisterForNavigation<SongPlayerPage, SongPlayerPageViewModel>();
             containerRegistry.RegisterForNavigation<TrackPage, TrackPageViewModel>();
+            containerRegistry.RegisterForNavigation<TrackInfoPage, TrackInfoPageViewModel>();
+            containerRegistry.RegisterForNavigation<FavoriteAlbumsPage, FavoriteAlbumsPageViewModel>();
+            containerRegistry.RegisterForNavigation<FavoriteTracksPage, FavoriteTracksPageViewModel>();
+            containerRegistry.Register<IApiManager, ApiManager>();
             containerRegistry.Register<IDeezerApiService, DeezerApiService>();
         }
 

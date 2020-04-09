@@ -3,18 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behaviours="clr-namespace:NotSpotifyApp.Behaviours"
              mc:Ignorable="d"
+             BackgroundColor="LightSkyBlue"
              x:Class="NotSpotifyApp.Views.AccessPage">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to NotSpotify!"
-                   TextColor="#F44336"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Access"
-                    Command="{Binding FingerprintCommand}">
+        <ScrollView>
+            <Grid>
+                <StackLayout>
+                    <Image Source="AppIcon"
+                           VerticalOptions="StartAndExpand"
+                           HeightRequest="100"
+                           HorizontalOptions="CenterAndExpand"                     
+                           Margin="0,250,0,0">
+                    </Image>
 
-            </Button>
-        </StackLayout>
+                    <Button Text="Access NotSpotify"
+                            Margin="24"
+                            TextColor="White"
+                            CornerRadius="20"
+                            Command="{Binding FingerprintCommand}"
+                            BackgroundColor="#448AFF">
+                        <Button.Behaviors>
+                            <behaviours:ViewTappedButtonBehavior AnimationType="Scale"/>
+                        </Button.Behaviors>
+                    </Button>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -4,29 +4,37 @@ using NotSpotifyApp.Utilities;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class ArtistPageViewModel : BaseViewModel, INotifyPropertyChanged
+    public class ArtistPageViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        Artist _selectedArtist;
         private readonly INavigationService _navigationService;
+        private readonly IPageDialogService _dialogService;
         public ObservableCollection<Artist> ModelArtists { get; set; } = new ObservableCollection<Artist>();
         public DelegateCommand SearchArtistCommand { get; set; }
         public string Id { get; set; }
 
+        public Artist SelectedArtist 
+        {
+            get { return _selectedArtist; }
+            set
+            {
+                _selectedArtist = value;
+
+                if (_selectedArtist != null)
+                    DisplaySelectedElement();
+            }
+        }
 
         public ArtistPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeezerApiService apiService) : base(navigationService, apiService)
         {
             _navigationService = navigationService;
+            _dialogService = pageDialogService;
+
             LoadModelArtists();
                       
             SearchArtistCommand = new DelegateCommand(async () =>
@@ -46,21 +54,22 @@ namespace NotSpotifyApp.ViewModels
             }
         }
 
+        public async void DisplaySelectedElement()
+        {
+           await _dialogService.DisplayAlertAsync($"{AlertTextConstants.SelectedText}",$"Artist name: {_selectedArtist.Name} \nArtist ID: {_selectedArtist.Id}",$"{AlertTextConstants.OptionButtonText}");
+        }
 
         public void LoadModelArtists()
         {
-            ModelArtists.Add(new Artist() { Name = "Billie Eilish", Picture = "BillieEilish.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Jhené Aiko", Picture = "JheneAiko.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Lil Uzi Vert", Picture = "LilUziVert.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Lil Baby", Picture = "LilBaby.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Bad Bunny", Picture = "BadBunny.jpg" });
-            ModelArtists.Add(new Artist() { Name = "NCT 127", Picture = "NCT127.jpg" });
-            ModelArtists.Add(new Artist() { Name = "BTS", Picture = "BTS.jpg" });
-            ModelArtists.Add(new Artist() { Name = "Post Malone", Picture = "PostMalone.jpg" });
-        }
+            ModelArtists.Add(new Artist() { Id = 4974921, Name = "Fifth Harmony", Picture = "FifthHarmony.jpg" });
+            ModelArtists.Add(new Artist() { Id = 7101343, Name = "Lil Uzi Vert", Picture = "LilUziVert.jpg" });
+            ModelArtists.Add(new Artist() { Id = 5292512, Name = "Halsey", Picture = "Halsey.jpg" });
+            ModelArtists.Add(new Artist() { Id = 4495513, Name = "Travis Scott", Picture = "TravisScott.jpg" });
+            ModelArtists.Add(new Artist() { Id = 4746199, Name = "Troye Sivan", Picture = "TroyeSivan.jpg" });
+            ModelArtists.Add(new Artist() { Id = 8706544, Name = "Dua Lipa", Picture = "DuaLipa.jpg" });
 
-        
-           
+        }
+       
     }
 }
 

@@ -3,15 +3,17 @@ using NotSpotifyApp.Utilities;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class BaseViewModel
+    public class BaseViewModel : INotifyPropertyChanged
     {
         protected INavigationService NavigationService { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
         protected IDeezerApiService ApiService { get; set; }
 
         public BaseViewModel(INavigationService navigationService, IDeezerApiService apiService)

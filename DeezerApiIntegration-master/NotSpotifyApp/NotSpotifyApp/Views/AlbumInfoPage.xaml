@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             BackgroundImageSource="WBackgroundPicture.jpg"
+             BackgroundImageSource="Test2.jpg"
              x:Class="NotSpotifyApp.Views.AlbumInfoPage">
     <ContentPage.Content>
         <ScrollView>
@@ -24,10 +24,10 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <Frame Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor ="#F44336" BorderColor="White">
@@ -36,6 +36,7 @@
                        Text="{Binding AlbumInfo.Title}"
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
+                       FontFamily="{StaticResource TitleStyle}"
                        TextColor="White"
                        FontSize="20">
                     </Label>
@@ -47,14 +48,16 @@
                     </Image.GestureRecognizers>
                 </Image>
 
-                <ImageButton Source="ic_favorite"
+                <ImageButton Source="ic_fav"
                                  Grid.Row="0"
                                  Grid.Column="3"
                                  HorizontalOptions="Center"
                                  Margin="0,0,30,0"
                                  BackgroundColor="Transparent"
-                                 HeightRequest="40">
-                    </ImageButton>
+                                 HeightRequest="45"
+                                 Command="{Binding AddFavoriteAlbumCommand}">
+                                 
+                </ImageButton>
 
                 <ImageButton Source="ic_share"
                                  Grid.Row="0"
@@ -63,20 +66,10 @@
                                  Margin="0,0,5,0"
                                  Command="{Binding ShareAlbumCommand}"
                                  BackgroundColor="Transparent"
-                                 HeightRequest="40">
+                                 HeightRequest="35">
                 </ImageButton>
 
                 <Image Source="{Binding AlbumInfo.CoverXl}" Grid.Row="2" Grid.ColumnSpan="4"/>
-
-                <Label Grid.Row="3"
-                       Grid.ColumnSpan="4"
-                       Margin="15,0,0,0"
-                       Text="{Binding AlbumInfo.Title}"
-                       HorizontalOptions="CenterAndExpand"
-                       FontAttributes="Bold"
-                       TextColor="White"
-                       FontSize="28">
-                </Label>
 
                 <Label Grid.Row="4"
                            Grid.ColumnSpan="4"

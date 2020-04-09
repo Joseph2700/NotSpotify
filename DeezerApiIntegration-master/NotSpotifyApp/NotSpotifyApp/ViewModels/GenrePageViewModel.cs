@@ -14,9 +14,9 @@ using Xamarin.Essentials;
 
 namespace NotSpotifyApp.ViewModels
 {
-	public class GenrePageViewModel : BaseViewModel, INotifyPropertyChanged
+	public class GenrePageViewModel : BaseViewModel
 	{		
-		public event PropertyChangedEventHandler PropertyChanged;
+		
 		public DelegateCommand GetGenreInfoCommand { get; set; }
 		public Genre GenreInfo { get; set; }
 		public string Id { get; set; }

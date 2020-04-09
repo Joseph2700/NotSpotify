@@ -1,5 +1,6 @@
 ﻿using NotSpotifyApp.Models;
 using NotSpotifyApp.Services;
+using NotSpotifyApp.Utilities;
 using Plugin.Share;
 using Plugin.Share.Abstractions;
 using Prism.Commands;
@@ -10,13 +11,15 @@ using System.Threading.Tasks;
 
 namespace NotSpotifyApp.ViewModels
 {
-    public class AlbumInfoPageViewModel : BaseViewModel,IInitialize, INotifyPropertyChanged
+    public class AlbumInfoPageViewModel : BaseViewModel,IInitialize
     {
         public Album AlbumInfo { get; set; }
+        protected IApiManager ApiManager = new ApiManager();
+        public DelegateCommand AddFavoriteAlbumCommand { get; set; }
         public DelegateCommand GetAlbumInfoCommand { get; set; }
         public DelegateCommand ReturnToAlbumPageCommand { get; set; }
         public DelegateCommand ShareAlbumCommand { get; set; }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string SelectedAlbumID { get; set; }
         public string Id { get; set; }
 
         public AlbumInfoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
@@ -39,6 +42,12 @@ namespace NotSpotifyApp.ViewModels
                     Url = $"{AlbumInfo.SharingLink}"
                });
             });
+
+            AddFavoriteAlbumCommand = new DelegateCommand(async () =>
+            {
+                await AddAlbumToFavorites();
+                await pageDialogueService.DisplayAlertAsync($"{AlertTextConstants.AddedFavoriteTitle}",$"{AlertTextConstants.AddedFavoriteMessage}", $"{AlertTextConstants.OptionButtonText}");
+            });
         }
 
         public void Initialize(INavigationParameters parameters)
@@ -48,9 +57,15 @@ namespace NotSpotifyApp.ViewModels
                 Id = parameters["Album id"].ToString();
                 GetAlbumInfoCommand.Execute();
             }
+            SelectedAlbumID = Id;
         }
-        
-        
+
+        public async Task AddAlbumToFavorites()
+        {
+            await ApiManager.AddFavoriteAlbumAsync(SelectedAlbumID);
+        }
+
+
         async Task GetAlbumData()
         {
             AlbumInfo = await ApiService.GetAlbumInfo(Id);

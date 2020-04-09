@@ -22,9 +22,9 @@ namespace NotSpotifyApp.Models
         [JsonProperty("rank")]
         public int Rank { get; set; }
         [JsonProperty("album")]
-        public Album album { get; set; }
+        public Album Album { get; set; }
         [JsonProperty("artist")]
-        public Artist artist { get; set; }
+        public Artist Artist { get; set; }
         
 
        

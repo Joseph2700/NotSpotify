@@ -12,9 +12,8 @@ namespace NotSpotifyApp.Views
         public OptionsTabbedPage()
         {
             InitializeComponent();
-
-            On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-            On<Android>().SetBarSelectedItemColor(Color.FromHex("#F44336"));
+            
+            
         }
     }
 }
