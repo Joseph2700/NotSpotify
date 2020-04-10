@@ -29,7 +29,7 @@ namespace NotSpotifyApp.ViewModels
 
 		public SongPlayerPageViewModel(INavigationService navigationService, IPageDialogService pageDialogueService, IDeezerApiService apiService) : base(navigationService, apiService)
 		{
-			var stream = GetStreamFromFile("Circles.mp3");
+			var stream = GetStreamFromFile("Nameofmp3.mp3");
 			player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
 			player.Load(stream);
 
