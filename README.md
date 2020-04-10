@@ -3,51 +3,58 @@ NotSpotifyApp is an app that retrieves its data from the Deezer API, allowing yo
 
 AppMockup URL: https://imgur.com/NZqnlSp  
 Trello URL: https://trello.com/b/FoXJ3IcV/notspotifyapp
+<br>
 Deezer API : https://rapidapi.com/deezerdevs/api/deezer-1
  
-<h2 style="text-align: center;"><strong>Access screen</strong></h2>
-<br>
-<img src="AccessPage.PNG" />
+# App screenshots
+ 
+## AccesPage, HomePage and SongPlayerPage
+<table>
+<tr>
+<td><img src="AccessPage.PNG" width="250" /></td>
+<td> <img width="100"/>  </td>
+<td><img src="HomePage.PNG" width="250" /></td>
+<td> <img width="100"/>  </td>
+<td><img src="SongPlayerPage.PNG" width="250" /></td>
+</tr>
+</table>
 
-<h2 style="text-align: center;"><strong>Home screen</strong></h2>
-<br>
-<img src="HomePage.PNG"/>
+## ArtistPage and ArtistInfoPage
+<table>
+<tr>
+<td><img src="ArtistPage.PNG" width="250" /></td>
+<td> <img width="100"/>  </td>
+<td><img src="ArtistInfoPage.PNG" width="250" /></td>
+</tr>
+</table>
 
-<h2 style="text-align: center;"><strong>Artists screen</strong></h2>
-<br>
-<img src="ArtistPage.PNG"/>
+## AlbumPage and AlbumInfoPage
+<table>
+<tr>
+<td><img src="AlbumPage.PNG" width="250" /></td>
+<td> <img width="100"/>  </td>
+<td><img src="AlbumInfoPage.PNG" width="250" /></td>
+</tr>
+</table>
 
-<h2 style="text-align: center;"><strong>Albums screen</strong></h2>
-<br>
-<img src="AlbumPage.PNG" />
+## TrackPage and TrackInfoPage
+<table>
+<tr>
+<td><img src="TrackPage.PNG" width="250" /></td>
+<td> <img width="100"/>  </td>
+<td><img src="TrackInfoPage.PNG" width="250" /></td>
+</tr>
+</table>
 
-<h2 style="text-align: center;"><strong>Tracks screen</strong></h2>
-<br>
-<img src="TrackPage.PNG"/>
+## FavoriteAlbumsPage and FavoriteTracksPage
+<table>
+<tr>
+<td><img src="FavoriteAlbumsPage.PNG" width="250" /></td>
+<td> <img width="100"/>  </td>
+<td><img src="FavoriteTracksPage.PNG" width="250" /></td>
+</tr>
+</table>
 
-<h2 style="text-align: center;"><strong>Artist Info screen</strong></h2>
-<br>
-<img src="ArtistInfoPage.PNG"/>
-
-<h2 style="text-align: center;"><strong>Album Info screen</strong></h2>
-<br>
-<img src="AlbumInfoPage.PNG"/>
-
-<h2 style="text-align: center;"><strong>Track Info screen</strong></h2>
-<br>
-<img src="TrackInfoPage.PNG"/>
-
-<h2 style="text-align: center;"><strong>Song Player screen</strong></h2>
-<br>
-<img src="SongPlayerPage.PNG"/>
-
-<h2 style="text-align: center;"><strong>Favorite Albums screen</strong></h2>
-<br>
-<img src="FavoriteAlbumsPage.PNG"/>
-
-<h2 style="text-align: center;"><strong>Favorite Tracks screen</strong></h2>
-<br>
-<img src="FavoriteTracksPage.PNG"/>
 
 <h2 style="text-align: center;"><strong>Team members</strong></h2>
 
