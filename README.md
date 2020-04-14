@@ -1,10 +1,19 @@
 # NotSpotifyApp
 NotSpotifyApp is an app that retrieves its data from the Deezer API, allowing you to search for an artist, album or track by it's Deezer ID and finally displaying its info on screen. It also allows you to add your favorite albums, tracks and also allows you to play music. 
 
-AppMockup URL: https://imgur.com/NZqnlSp  
-Trello URL: https://trello.com/b/FoXJ3IcV/notspotifyapp
-<br>
-Deezer API : https://rapidapi.com/deezerdevs/api/deezer-1
+## Team members
+
+- [José Mendoza](https://github.com/Joseph2700)
+
+- [Sebastián Soto](https://github.com/ssmatos)
+
+- [Ambar Cuevas](https://github.com/Ambarcb)
+
+## AppInfo
+
+- [App Mockup](https://imgur.com/NZqnlSp)  
+- [Trello board URL](https://trello.com/b/FoXJ3IcV/notspotifyapp)
+- [Deezer API](https://rapidapi.com/deezerdevs/api/deezer-1)
  
 # App screenshots
  
@@ -54,15 +63,6 @@ Deezer API : https://rapidapi.com/deezerdevs/api/deezer-1
 <td><img src="FavoriteTracksPage.PNG" width="250" /></td>
 </tr>
 </table>
-
-
-<h2 style="text-align: center;"><strong>Team members</strong></h2>
-
-- José Mendoza ID: 1086907
-
-- Sebastián Soto ID: 1087765
-
-- Ambar Cuevas ID: 1086617
 
 <h2 style="text-align: center;"><strong>Tools used</strong></h2>
 
